@@ -13,17 +13,17 @@ return new class extends Migration
     {
         Schema::create('apartments', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->text('title');
             $table->tinyInteger('no_rooms')->unsigned();
             $table->tinyInteger('no_beds')->unsigned();
             $table->tinyInteger('no_bathrooms')->unsigned();
             $table->tinyInteger('square_meters')->unsigned();
-            $table->string('address');
-            $table->text('img');
+            $table->text('address');
+            $table->text('imgs');
             $table->boolean('visible');
             $table->decimal('latitude', 11,8);
             $table->decimal('longitude', 11,8);
-            $table->float('price');
+            $table->tinyInteger('price');
             $table->text('description');
             $table->timestamps();
         });
