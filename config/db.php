@@ -167,12 +167,14 @@ return [ 'apartments' => [
         
         E' possibile concordare pulizie extra durante il periodo di soggiorno, previa disponibilità della persona addetta per il giorno da stabilire, al costo di € 15 l'ora.",
     ],
+
+
     [
         "imgs" => [
-            "0" => "",
-            "1" => "",
-            "2" => "",
-            "3" => "",
+            "0" => "https://a0.muscache.com/im/pictures/75186149/0d134fe6_original.jpg?im_w=1200",
+            "1" => "https://a0.muscache.com/im/pictures/75074418/126c3980_original.jpg?im_w=1200",
+            "2" => "https://a0.muscache.com/im/pictures/75074525/fff9df93_original.jpg?im_w=1200",
+            "3" => "https://a0.muscache.com/im/pictures/0db8a49f-ec39-4537-bc89-b875de775374.jpg?im_w=1200",
         ],
         "title" => "Villa Mimosa - villa sul mare con piscina",
         "no_rooms" => 6,
