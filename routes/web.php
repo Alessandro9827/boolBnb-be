@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ApartamentController;
+use App\Http\Controllers\ApartmentController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -24,5 +24,5 @@ Route::middleware('auth')
     ->name('user.')
     ->prefix('user/')
     ->group(function () {
-        Route::resource('apartments', ApartamentController::class);
+        Route::resource('apartments', ApartmentController::class);
     });
