@@ -1,6 +1,6 @@
 <?php
 
-return [ 'apartment' => [
+return [ 'apartments' => [
 
     [
         "imgs" => [
