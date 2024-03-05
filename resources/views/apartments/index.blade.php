@@ -8,7 +8,9 @@
             </h1>
             @foreach ($apartments as $apartment)
                 <div class="col-3">
-                    {{$apartment -> title}}
+                    <h3>
+                        {{$apartment -> title}}
+                    </h3>
                 </div>
             @endforeach
         </div>
