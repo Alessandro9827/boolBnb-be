@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+
 class ApartmentSeeder extends Seeder
 {
     /**
@@ -12,6 +13,6 @@ class ApartmentSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        
     }
 }
