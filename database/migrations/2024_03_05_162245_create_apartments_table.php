@@ -18,13 +18,13 @@ return new class extends Migration
             $table->tinyInteger('no_beds')->unsigned();
             $table->tinyInteger('no_bathrooms')->unsigned();
             $table->tinyInteger('square_meters')->unsigned();
-            $table->text('address');
-            $table->text('imgs');
+            $table->text('address') -> nullable();
+            $table->json('imgs');
             $table->boolean('visible');
-            $table->decimal('latitude', 11,8);
-            $table->decimal('longitude', 11,8);
+            $table->decimal('latitude', 11,8)->nullable();
+            $table->decimal('longitude', 11,8)->nullable();
             $table->tinyInteger('price');
-            $table->text('description');
+            $table->mediumText('description');
             $table->timestamps();
         });
     }
