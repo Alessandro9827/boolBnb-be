@@ -8,9 +8,16 @@
             </h1>
             @foreach ($apartments as $apartment)
                 <div class="col-3">
-                    <h3>
-                        {{$apartment -> title}}
-                    </h3>
+                    <div class="card">
+                        <h3>
+                            {{$apartment->title}}
+                        </h3>
+                        {{-- @dump(json_decode($apartment->imgs)) --}}
+                        @foreach (json_decode($apartment->imgs) as $img)
+                        <img src="{{$img}}" alt="">
+                            
+                        @endforeach
+                    </div>
                 </div>
             @endforeach
         </div>
