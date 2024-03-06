@@ -13,10 +13,10 @@
                             {{$apartment->title}}
                         </h3>
                         {{-- @dump(json_decode($apartment->imgs)) --}}
-                        @foreach (json_decode($apartment->imgs) as $img)
+                       {{--  @foreach (json_decode($apartment->imgs) as $img)
                         <img src="{{$img}}" alt="">
                             
-                        @endforeach
+                        @endforeach --}}
                     </div>
                 </div>
             @endforeach

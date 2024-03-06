@@ -9,7 +9,7 @@
                     <h1>
                         {{$apartment->title}}
                     </h1>
-                    @if (isset(filetype($apartment->imgs)))
+                    {{-- @if (isset(filetype($apartment->imgs)))
                             <img src="{{$apartment->imgs}}" alt="">
                         
                     @else
@@ -17,7 +17,7 @@
                         <img src="{{$img}}" alt="">
                         
                         @endforeach
-                    @endif
+                    @endif --}}
                     {{-- @dump(json_decode($apartment->imgs)) --}}
 
                 </div>
