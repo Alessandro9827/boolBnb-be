@@ -4,6 +4,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-8">
+
+            @include('partials.errors')
+
             <form action="@yield('form-action')" method="POST" enctype="multipart/form-data">
                 @csrf
                 @yield('form-method')
