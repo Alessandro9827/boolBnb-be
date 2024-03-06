@@ -45,7 +45,10 @@ class ApartmentController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        // wjncjkwdecoinecnwjecdejwjn
+        //jwendclknewcnowencwencwenoinc
+        //cdsjbnckljdnckjvnsdcnjl
+        //cdjncjndwcbohcek
     }
 
     /**
