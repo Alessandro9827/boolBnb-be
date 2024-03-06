@@ -9,10 +9,15 @@
                     <h1>
                         {{$apartment->title}}
                     </h1>
-                    @foreach (json_decode($apartment->imgs) as $img)
-                    <img src="{{$img}}" alt="">
+                    @if (isset(filetype($apartment->imgs)))
+                            <img src="{{$apartment->imgs}}" alt="">
                         
-                    @endforeach
+                    @else
+                        @foreach (json_decode($apartment->imgs) as $img)
+                        <img src="{{$img}}" alt="">
+                        
+                        @endforeach
+                    @endif
                     {{-- @dump(json_decode($apartment->imgs)) --}}
 
                 </div>
@@ -21,8 +26,3 @@
     </div>
 @endsection
 
-<?php 
-$imgs = json_decode($apartment->imgs);
-// dd($imgs[0])
-
-?>

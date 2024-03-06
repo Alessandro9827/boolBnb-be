@@ -17,7 +17,8 @@
                 </div>
                 <div class="form-group mb-3">
                     <label for="description">Please type a description</label>
-                    <input type="description" class="form-control" id="description" name="description" value="{{old('imgs', $apartment->imgs)}}">
+                    <textarea type="description" class="form-control" id="description" name="description"> {{old('imgs', $apartment->imgs)}}
+                    </textarea>
                 </div>
                 <div class="form-group mb-3">
                     <div>
@@ -47,11 +48,15 @@
                     <label for="imgs" class="form-label">Images</label>
                     <input type="file" class="form-control" id="imgs" name="imgs" value="{{old('imgs', $apartment->imgs)}}">
                 </div>
+                {{-- <div class="form-group mb-3">
+                    <label for="visible" class="form-label">Visible?</label>
+                    <input type="radio" class="form-control" id="visible" name="visible" value="{{old('visible', $apartment->visible)}}">
+                </div> --}}
                 <div class="form-group mb-3">
                     <label for="price">Prices</label>
                     <input type="float" class="form-control" id="price" name="price" value="{{old('imgs', $apartment->imgs)}}">
                 </div>
-                <button type="submit" class="btn btn-primary">@yield('page-title')</button>
+                <button type="submit" class="btn btn-primary">Create</button>
               </form>
         </div>
     </div>
