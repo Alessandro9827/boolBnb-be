@@ -1,4 +1,4 @@
-@extends('apartments.layouts.edit-or-create')
+@extends('apartments.layouts.create-or-edit')
 
 @section('form-action')
     {{ route('user.apartments.store') }}
