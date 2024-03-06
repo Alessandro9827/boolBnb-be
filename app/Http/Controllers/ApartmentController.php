@@ -59,8 +59,39 @@ class ApartmentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Apartment $apartment)
     {
-        //
+        $apartment->delete();
+        
+        return redirect()->route('user.apartment.index');
+    }
+
+
+    public function deletedIndex(){
+        $apartment = Apartment::onlyTrashed()->get();
+        
+        return view('user.apartment.deleted-index', compact('apartments'));
+    }
+
+    public function deletedShow(string $id){
+
+        $apartment = Apartment::withTrashed()->where('id', $id)->first();
+        
+        return view('user.apartment.deleted-show', compact('apartment'));
+    }
+
+    public function deletedRestore(string $id){
+        $apartment = Apartment::withTrashed()->where('id', $id)->first();
+        $apartment->restore();
+    }
+
+    public function deletedDestroy(string $id){
+
+        $apartment = Apartment::withTrashed()->where('id', $id)->first();
+
+       
+        $apartment->forceDelete () ;
+        return redirect () ->route ('user.apartment.deleted.index') ;    
+
     }
 }
