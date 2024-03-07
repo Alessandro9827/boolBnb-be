@@ -11,7 +11,7 @@ class ApartmentController extends Controller
     private $rules = [
         'title' => ['required', 'min:5', 'max:255', 'string'],
         'no_rooms' => ['required', 'min:1', 'max:100', 'integer'],
-        'no_beds' => ['required', 'min:1', 'max:3', 'integer'],
+        'no_beds' => ['required', 'min:1', 'max:100', 'integer'],
         'no_bathrooms' => ['required', 'min:1', 'max:10', 'integer'],
         'square_meters' => ['required', 'min:10', 'max:10000', 'integer'],
         'address' => ['required', 'min:5', 'max:255', 'string'],
