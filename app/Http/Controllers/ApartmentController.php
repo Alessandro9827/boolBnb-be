@@ -10,17 +10,17 @@ class ApartmentController extends Controller
 {
     private $rules = [
         'title' => ['required', 'min:5', 'max:255', 'string'],
-        'no_rooms' => ['required', 'min:1', 'max:2', 'integer'],
-        'no_bads' => ['required', 'min:1', 'max:2', 'integer'],
-        'no_bathroom' => ['required', 'min:1', 'max:2', 'integer'],
-        'square_meters' => ['required', 'min:2', 'max:4', 'integer'],
+        'no_rooms' => ['required', 'min:1', 'max:100', 'integer'],
+        'no_beds' => ['required', 'min:1', 'max:3', 'integer'],
+        'no_bathrooms' => ['required', 'min:1', 'max:10', 'integer'],
+        'square_meters' => ['required', 'min:10', 'max:10000', 'integer'],
         'address' => ['required', 'min:5', 'max:255', 'string'],
         'img' => ['url:https' || 'image', 'required'],
         'visible' => ['boolean'],
         'latidute' => ['min:4', 'max:6', 'float'],
         'longitude' => ['min:4', 'max:6', 'float'],
-        'price' => ['required', 'min:2', 'max:5', 'integer'],
-        'description' => ['required', 'min:20', 'string'],
+        'price' => ['required', 'min:10', 'max:100000', 'integer'],
+        'description' => ['required', 'min:10', 'string'],
     ];
 
     /**
