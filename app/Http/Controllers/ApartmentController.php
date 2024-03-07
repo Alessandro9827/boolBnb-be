@@ -4,9 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Models\Apartment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ApartmentController extends Controller
 {
+    private $rules = [
+        'title' => ['required', 'min:5', 'max:255', 'string'],
+        'no_rooms' => ['required', 'min:1', 'max:2', 'integer'],
+        'no_bads' => ['required', 'min:1', 'max:2', 'integer'],
+        'no_bathroom' => ['required', 'min:1', 'max:2', 'integer'],
+        'square_meters' => ['required', 'min:2', 'max:4', 'integer'],
+        'address' => ['required', 'min:5', 'max:255', 'string'],
+        'img' => ['url:https' || 'image', 'required'],
+        'visible' => ['boolean'],
+        'latidute' => ['min:4', 'max:6', 'float'],
+        'longitude' => ['min:4', 'max:6', 'float'],
+        'price' => ['required', 'min:2', 'max:5', 'integer'],
+        'description' => ['required', 'min:20', 'string'],
+    ];
+
     /**
      * Display a listing of the resource.
      */
@@ -30,8 +46,12 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
+        
         // dd($request->all());
+        $data = $request->validate($this->rules);
+
+        $imageSrc = Storage::put('uploads/apartments', $data['img']);
+        $data['img'] = $imageSrc;
         
         $apartment = Apartment::create($data);
         return redirect()->route('user.apartments.show', $apartment);
@@ -58,7 +78,7 @@ class ApartmentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data = $request->validate($this->rules);
     }
 
     /**
