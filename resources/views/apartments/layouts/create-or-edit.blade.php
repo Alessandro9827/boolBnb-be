@@ -46,7 +46,7 @@
                 </div>
                 <div class="form-group mb-3">
                     <label for="img" class="form-label">Images</label>
-                    <input type="file" class="form-control" id="img" name="img" value="{{old('imgs', $apartment->img)}}">
+                    <input type="file" class="form-control" id="img" name="img" value="{{old('img', $apartment->img)}}">
                 </div>
                 {{-- <div class="form-group mb-3">
                     <label for="visible" class="form-label">Visible?</label>
