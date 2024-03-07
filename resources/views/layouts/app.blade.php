@@ -59,8 +59,8 @@
                                     {{-- <a class="dropdown-item" href="{{ route('user.apartments.edit', $apartment) }}"
                                         
                                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                                     document.getElementById('user.apartments.edit').submit();">
+                                        {{ __('Edit') }}
 
                                     </a> --}}
                                    
