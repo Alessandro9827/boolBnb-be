@@ -40,7 +40,7 @@
                     <label for="square_meters">Square meters</label>
                     <input type="number" class="form-control" id="square_meters" name="square_meters" value="{{old('square_meters', $apartment->square_meters)}}">
                 </div>
-                <form action="{{ route('user.apartments.store') }}" method="POST">
+                {{-- <form action="{{ route('user.apartments.store') }}" method="POST">
                     @csrf
                     <div>
                         <label for="address">Address:</label>
@@ -76,7 +76,7 @@
                             });
                         });
                     });
-                </script>
+                </script> --}}
                 
                 <div class="form-group mb-3">
                     <label for="img" class="form-label">Images</label>
