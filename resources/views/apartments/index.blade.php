@@ -10,8 +10,8 @@
             @foreach ($apartments as $apartment)
             
             <div class="col-3">
+                <a href="{{ route('user.apartments.show', $apartment) }}" class="text-decoration-none">
                 <div class="card">
-                        <a href="{{ route('user.apartments.show', $apartment) }}" class="text-decoration-none">
                             <h3>
                                 {{$apartment->title}}
                             </h3>
@@ -28,8 +28,8 @@
                                 <img src="{{ asset ('storage') . '/' . $apartment->img}}" alt="">
                             
                             @endif 
-                        </a> 
-                    </div>
+                        </div>
+                    </a> 
                 </div>
             @endforeach
         </div>
