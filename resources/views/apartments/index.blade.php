@@ -17,7 +17,14 @@
                         <img src="{{$img}}" alt="">
                             
                         @endforeach --}}
-                        <img src="{{$apartment->img}}" alt="">
+                        @if (str_starts_with($apartment->img, 'http'))
+                            <img src="{{$apartment->img}}" alt="" >
+                                
+                        @else
+                                
+                            <img src="{{ asset ('storage') . '/' . $apartment->img}}" alt="">
+                        
+                        @endif 
                     </div>
                 </div>
             @endforeach
