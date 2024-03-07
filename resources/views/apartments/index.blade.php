@@ -8,6 +8,8 @@
                 My apartment
             </h1>
             @foreach ($apartments as $apartment)
+            <a href="{{ route('user.apartments.show', $apartment) }}" class="text-decoration-none">
+                
                 <div class="col-3">
                     <div class="card">
                         <h3>
@@ -28,6 +30,7 @@
                         @endif 
                     </div>
                 </div>
+            </a> 
             @endforeach
         </div>
     </div>
