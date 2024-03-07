@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('head-title')
+    @yield('page-title')
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -17,7 +21,7 @@
                 </div>
                 <div class="form-group mb-3">
                     <label for="description">Please type a description</label>
-                    <textarea type="description" class="form-control" id="description" name="description"> {{old('imgs', $apartment->imgs)}}
+                    <textarea type="description" class="form-control" id="description" name="description" cols="30" rows="10"> {{old('description', $apartment->description)}}
                     </textarea>
                 </div>
                 <div class="form-group mb-3">
@@ -29,34 +33,41 @@
                 
                 <div class="form-group mb-3">
                     <label for="no_beds">Number of beds:</label>
-                    <input type="number" class="form-control" id="no_beds" value="{{old('no_beds', $apartment->no_beds)}}" name="no_beds">
+                    <input type="number" class="form-control d-inline w-50" id="no_beds" value="{{old('no_beds', $apartment->no_beds)}}" name="no_beds">
                 </div>
 
                 <div class="form-group mb-3">
                     <label for="no_bathrooms">Number of bath</label>
-                    <input type="text" class="form-control" id="no_bathrooms" name="no_bathrooms" value="{{old('no_bathrooms', $apartment->no_bathrooms)}}">
+                    <input type="text" class="form-control d-inline w-50" id="no_bathrooms" name="no_bathrooms" value="{{old('no_bathrooms', $apartment->no_bathrooms)}}">
                 </div>
                 <div class="form-group mb-3">
                     <label for="square_meters">Square meters</label>
-                    <input type="number" class="form-control" id="square_meters" name="square_meters" value="{{old('square_meters', $apartment->square_meters)}}">
+                    <input type="number" class="form-control d-inline w-50" id="square_meters" name="square_meters" value="{{old('square_meters', $apartment->square_meters)}}">
                 </div>
                 <div class="form-group mb-3">
                     <label for="address">Address of the apartment</label>
                     <input type="text" class="form-control" id="address" name="address" value="{{old('address', $apartment->address)}}">
                 </div>
-                <div class="form-group mb-3">
-                    <label for="img" class="form-label">Images</label>
-                    <input type="file" class="form-control" id="img" name="img" value="{{old('img', $apartment->img)}}">
-                </div>
+                @if (str_starts_with($apartment->img, 'http'))
+                    <div class="form-group mb-3">
+                        <label for="img" class="form-label">Images</label>
+                        <input type="text" class="form-control" id="img" name="img" value="{{old('img', $apartment->img)}}">
+                    </div>
+                @else
+                    <div class="form-group mb-3">
+                        <label for="img" class="form-label">Images</label>
+                        <input type="file" class="form-control" id="img" name="img" value="{{old('img', $apartment->img)}}">
+                    </div>
+                @endif
                 {{-- <div class="form-group mb-3">
                     <label for="visible" class="form-label">Visible?</label>
                     <input type="radio" class="form-control" id="visible" name="visible" value="{{old('visible', $apartment->visible)}}">
                 </div> --}}
                 <div class="form-group mb-3">
                     <label for="price">Prices</label>
-                    <input type="float" class="form-control" id="price" name="price" value="{{old('price', $apartment->price)}}">
+                    <input type="number" class="form-control d-inline w-50" id="price" name="price" value="{{old('price', $apartment->price)}}" step="0.01">
                 </div>
-                <button type="submit" class="btn btn-primary">Create</button>
+                <button type="submit" class="btn btn-primary">@yield('page-title')</button>
               </form>
         </div>
     </div>

@@ -15,11 +15,11 @@ class ApartmentController extends Controller
         'no_bathrooms' => ['required', 'min:1', 'max:10', 'integer'],
         'square_meters' => ['required', 'min:10', 'max:10000', 'integer'],
         'address' => ['required', 'min:5', 'max:255', 'string'],
-        'img' => [ 'image', 'required'],
+        'img' => 'required', 'image|url:https',
         'visible' => ['boolean'],
         'latidute' => ['min:4', 'max:6', 'float'],
         'longitude' => ['min:4', 'max:6', 'float'],
-        'price' => ['required', 'min:10', 'max:100000', 'integer'],
+        'price' => ['required', 'min:10', 'max:100000', 'numeric'],
         'description' => ['required', 'min:10', 'string'],
     ];
 
@@ -68,9 +68,8 @@ class ApartmentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Apartment $apartment)
-    {
-        
+    public function edit(Apartment $apartment){
+        return view('apartments.edit', compact('apartment'));
     }
 
     /**
@@ -79,10 +78,10 @@ class ApartmentController extends Controller
     public function update(Request $request, Apartment $apartment )
     {
         $data = $request->validate($this->rules);
-        $apartment->update($data);
-
         $imageSrc = Storage::put('uploads/apartments', $data['img']);
         $data['img'] = $imageSrc;
+        
+        $apartment->update($data);
 
         return redirect()->route('user.apartments.show', $apartment);
     }

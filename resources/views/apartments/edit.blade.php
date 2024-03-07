@@ -1,9 +1,12 @@
 @extends('apartments.layouts.create-or-edit')
-@section('page-title', 'Create apartment')
+
+@section('page-title', 'Edit apartment')
+
+
 @section('form-action')
-    {{ route('user.apartments.store') }}
+    {{ route('user.apartments.update', $apartment) }}
 @endsection
 
 @section('form-method')
-    @method('POST')
+    @method('PUT')
 @endsection
