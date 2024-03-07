@@ -17,6 +17,7 @@
                         <img src="{{$img}}" alt="">
                             
                         @endforeach --}}
+                        <img src="{{$apartment->img}}" alt="">
                     </div>
                 </div>
             @endforeach

@@ -19,8 +19,8 @@ return new class extends Migration
             $table->tinyInteger('no_bathrooms')->unsigned();
             $table->smallInteger('square_meters')->unsigned();
             $table->text('address') -> nullable();
-            
-            $table->boolean('visible');
+            $table->text('img')->nullable();
+            $table->boolean('visible')->default(true);
             $table->decimal('latitude', 11,8)->nullable();
             $table->decimal('longitude', 11,8)->nullable();
             $table->decimal('price', 7, 2, true);

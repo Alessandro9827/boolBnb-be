@@ -29,7 +29,7 @@
                 
                 <div class="form-group mb-3">
                     <label for="no_beds">Number of beds:</label>
-                    <input type="number" class="form-control" id="no_beds" value="{{old('no_beds', $apartment->no_beds)}}">
+                    <input type="number" class="form-control" id="no_beds" value="{{old('no_beds', $apartment->no_beds)}}" name="no_beds">
                 </div>
 
                 <div class="form-group mb-3">

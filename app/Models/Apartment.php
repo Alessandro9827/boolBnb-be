@@ -13,7 +13,8 @@ class Apartment extends Model
         'no_rooms',
         'no_beds',
         'no_bathrooms',
-        
+        'square_meters',
+        'img',
         'visible',
         'latitude',
         'longitude',
