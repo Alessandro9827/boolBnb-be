@@ -19,6 +19,7 @@
                         @endforeach
                     @endif --}}
                     {{-- @dump(json_decode($apartment->imgs)) --}}
+                    <img src="{{$apartment->img}}" alt="">
 
                 </div>
             </div>

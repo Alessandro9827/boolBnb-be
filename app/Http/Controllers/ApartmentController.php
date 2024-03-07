@@ -31,7 +31,7 @@ class ApartmentController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        // dd($request->imgs);
+        // dd($request->all());
         
         $apartment = Apartment::create($data);
         return redirect()->route('user.apartments.show', $apartment);
