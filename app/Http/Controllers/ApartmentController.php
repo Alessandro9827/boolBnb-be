@@ -81,6 +81,9 @@ class ApartmentController extends Controller
         $data = $request->validate($this->rules);
         $apartment->update($data);
 
+        $imageSrc = Storage::put('uploads/apartments', $data['img']);
+        $data['img'] = $imageSrc;
+
         return redirect()->route('user.apartments.show', $apartment);
     }
 
