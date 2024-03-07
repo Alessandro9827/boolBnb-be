@@ -9,18 +9,14 @@
                     <h1>
                         {{$apartment->title}}
                     </h1>
-                    {{-- @if (isset(filetype($apartment->imgs)))
-                            <img src="{{$apartment->imgs}}" alt="">
+                    @if (str_starts_with($apartment->img, 'http'))
+                    <img src="{{$apartment->img}}" alt="" >
                         
                     @else
-                        @foreach (json_decode($apartment->imgs) as $img)
-                        <img src="{{$img}}" alt="">
                         
-                        @endforeach
-                    @endif --}}
-                    {{-- @dump(json_decode($apartment->imgs)) --}}
-                    <img src="{{$apartment->img}}" alt="">
-
+                        <img src="{{ asset ('storage') . '/' . $apartment->img}}" alt="">
+                 
+                    @endif 
                 </div>
             </div>
         </div>
