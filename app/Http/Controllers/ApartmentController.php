@@ -76,9 +76,12 @@ class ApartmentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Apartment $apartment )
     {
         $data = $request->validate($this->rules);
+        $apartment->update($data);
+
+        return redirect()->route('user.apartments.show', $apartment);
     }
 
     /**
