@@ -42,6 +42,14 @@
                         <img src="{{ asset ('storage') . '/' . $apartment->img}}" alt="">
                  
                     @endif 
+
+                </div>
+                <a href="{{ route('user.apartments.edit', $apartment) }}" class="text-decoration-none">
+                    <button class="btn btn-sm btn-success">
+                        Edit
+                    </button>
+                </a>
+            </div>
                 </div>
             </div>
         </div>
