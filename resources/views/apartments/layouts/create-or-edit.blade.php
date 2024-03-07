@@ -40,44 +40,10 @@
                     <label for="square_meters">Square meters</label>
                     <input type="number" class="form-control" id="square_meters" name="square_meters" value="{{old('square_meters', $apartment->square_meters)}}">
                 </div>
-                {{-- <form action="{{ route('user.apartments.store') }}" method="POST">
-                    @csrf
-                    <div>
-                        <label for="address">Address:</label>
-                        <input type="text" id="address" name="address">
-                    </div>
-                    <div id="mappa" style="width: 100%; height: 400px;"></div>
-                    <button type="submit">Salva</button>
-                </form>
-                
-                <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.71.0/maps/maps-web.min.js"></script>
-                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-                <script>
-                    $(document).ready(function() {
-                        var map = tt.map({
-                            key: '{{ env("TOMTOM_API_KEY") }}',
-                            container: 'mappa',
-                            center: [0, 0], // Centro della mappa iniziale
-                            zoom: 10 // Livello di zoom iniziale
-                        });
-                
-                        $('#address').on('change', function() {
-                            var address = $(this).val();
-                            $.ajax({
-                                url: 'https://api.tomtom.com/search/2/geocode/' + address + '.json',
-                                data: {
-                                    key: '{{ env("TOMTOM_API_KEY") }}'
-                                },
-                                success: function(data) {
-                                    var lat = data.results[0].position.lat;
-                                    var lon = data.results[0].position.lon;
-                                    map.flyTo({center: [lon, lat], zoom: 15}); // Zoom sulla posizione trovata
-                                }
-                            });
-                        });
-                    });
-                </script> --}}
-                
+                <div class="form-group mb-3">
+                    <label for="address">Address of the apartment</label>
+                    <input type="text" class="form-control" id="address" name="address" value="{{old('address', $apartment->address)}}">
+                </div>
                 <div class="form-group mb-3">
                     <label for="img" class="form-label">Images</label>
                     <input type="file" class="form-control" id="img" name="img" value="{{old('imgs', $apartment->img)}}">
