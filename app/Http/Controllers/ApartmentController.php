@@ -15,7 +15,7 @@ class ApartmentController extends Controller
         'no_bathrooms' => ['required', 'min:1', 'max:10', 'integer'],
         'square_meters' => ['required', 'min:10', 'max:10000', 'integer'],
         'address' => ['required', 'min:5', 'max:255', 'string'],
-        'img' => ['url:https' || 'image', 'required'],
+        'img' => [ 'image', 'required'],
         'visible' => ['boolean'],
         'latidute' => ['min:4', 'max:6', 'float'],
         'longitude' => ['min:4', 'max:6', 'float'],
