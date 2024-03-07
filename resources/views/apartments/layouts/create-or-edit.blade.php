@@ -45,8 +45,8 @@
                     <input type="text" class="form-control" id="address" name="address" value="{{old('address', $apartment->address)}}">
                 </div>
                 <div class="form-group mb-3">
-                    <label for="imgs" class="form-label">Images</label>
-                    <input type="file" class="form-control" id="imgs" name="imgs" value="{{old('imgs', $apartment->imgs)}}">
+                    <label for="img" class="form-label">Images</label>
+                    <input type="file" class="form-control" id="img" name="img" value="{{old('imgs', $apartment->img)}}">
                 </div>
                 {{-- <div class="form-group mb-3">
                     <label for="visible" class="form-label">Visible?</label>
@@ -54,7 +54,7 @@
                 </div> --}}
                 <div class="form-group mb-3">
                     <label for="price">Prices</label>
-                    <input type="float" class="form-control" id="price" name="price" value="{{old('imgs', $apartment->imgs)}}">
+                    <input type="float" class="form-control" id="price" name="price" value="{{old('price', $apartment->price)}}">
                 </div>
                 <button type="submit" class="btn btn-primary">Create</button>
               </form>
