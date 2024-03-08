@@ -16,7 +16,7 @@
                 @yield('form-method')
                 
                 <div class="form-group mb-3">
-                    <label for="title">Insert title</label>
+                    <label for="title">Insert title *</label>
                     <input type="text" class="form-control" id="title" name="title" value="{{old('title', $apartment->title)}}">
                 </div>
                 <div class="form-group mb-3">
@@ -26,18 +26,18 @@
                 </div>
                 <div class="form-group mb-3">
                     <div>
-                        <label for="no_rooms">Number of rooms</label>
+                        <label for="no_rooms">Number of rooms *</label>
                         <input type="number" class="form-control d-inline w-50" id="no_rooms" name="no_rooms" value="{{old('no_rooms', $apartment->no_rooms)}}">
                     </div>
                 </div>
                 
                 <div class="form-group mb-3">
-                    <label for="no_beds">Number of beds:</label>
+                    <label for="no_beds">Number of beds *</label>
                     <input type="number" class="form-control d-inline w-50" id="no_beds" value="{{old('no_beds', $apartment->no_beds)}}" name="no_beds">
                 </div>
 
                 <div class="form-group mb-3">
-                    <label for="no_bathrooms">Number of bath</label>
+                    <label for="no_bathrooms">Number of bath *</label>
                     <input type="text" class="form-control d-inline w-50" id="no_bathrooms" name="no_bathrooms" value="{{old('no_bathrooms', $apartment->no_bathrooms)}}">
                 </div>
                 <div class="form-group mb-3">
@@ -45,17 +45,23 @@
                     <input type="number" class="form-control d-inline w-50" id="square_meters" name="square_meters" value="{{old('square_meters', $apartment->square_meters)}}">
                 </div>
                 <div class="form-group mb-3">
-                    <label for="address">Address of the apartment</label>
+                    <label for="address">Address of the apartment *</label>
                     <input type="text" class="form-control" id="address" name="address" value="{{old('address', $apartment->address)}}">
                 </div>
+                {{-- <div class="form-group mb-3">
+                    <label>Select if u want to put an url or upload a file</label>
+                    <input type="radio" class="form-check-input mt-0" id="file" name="file" value="file">
+                    <input type="radio" class="form-check-input" id="url" name="url" value="url">
+                </div> --}}
+
                 @if (str_starts_with($apartment->img, 'http'))
                     <div class="form-group mb-3">
-                        <label for="img" class="form-label">Images</label>
+                        <label for="img" class="form-label">Image *</label>
                         <input type="text" class="form-control" id="img" name="img" value="{{old('img', $apartment->img)}}">
                     </div>
                 @else
                     <div class="form-group mb-3">
-                        <label for="img" class="form-label">Images</label>
+                        <label for="img" class="form-label">Image *</label>
                         <input type="file" class="form-control" id="img" name="img" value="{{old('img', $apartment->img)}}">
                     </div>
                 @endif
@@ -64,7 +70,7 @@
                     <input type="radio" class="form-control" id="visible" name="visible" value="{{old('visible', $apartment->visible)}}">
                 </div> --}}
                 <div class="form-group mb-3">
-                    <label for="price">Prices</label>
+                    <label for="price">Price *</label>
                     <input type="number" class="form-control d-inline w-50" id="price" name="price" value="{{old('price', $apartment->price)}}" step="0.01">
                 </div>
                 <button type="submit" class="btn btn-primary">@yield('page-title')</button>

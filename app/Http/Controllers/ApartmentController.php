@@ -13,14 +13,14 @@ class ApartmentController extends Controller
         'no_rooms' => ['required', 'min:1', 'max:100', 'integer'],
         'no_beds' => ['required', 'min:1', 'max:100', 'integer'],
         'no_bathrooms' => ['required', 'min:1', 'max:10', 'integer'],
-        'square_meters' => ['required', 'min:10', 'max:10000', 'integer'],
+        'square_meters' => ['nullable', 'min:10', 'max:10000', 'integer'],
         'address' => ['required', 'min:5', 'max:255', 'string'],
         'img' => 'required', 'image|url:https',
         'visible' => ['boolean'],
         'latidute' => ['min:4', 'max:6', 'float'],
         'longitude' => ['min:4', 'max:6', 'float'],
         'price' => ['required', 'min:10', 'max:100000', 'numeric'],
-        'description' => ['required', 'min:10', 'string'],
+        'description' => ['nullable', 'min:10', 'string'],
     ];
 
     /**
