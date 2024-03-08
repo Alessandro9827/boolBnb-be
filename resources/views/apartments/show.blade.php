@@ -11,18 +11,12 @@
                     </h1>
                     @if (str_starts_with($apartment->img, 'http'))
                     <img src="{{$apartment->img}}" alt="" >
-                    
-                        
-                    @else
-                        
-                        <img src="{{ asset ('storage') . '/' . $apartment->img}}" alt="">
-                 
-                    @endif 
                     <div>
                         <p>
                             {{ $apartment->description}}
                         </p>
                     </div>
+
                     <div>
                         <p>
                             The house has:
@@ -42,7 +36,13 @@
                             Square meters {{ $apartment->square_meters}}mq, and is located in {{ $apartment->address}}.
                         </p>
                     </div>
+                        
+                    @else
+                        
+                        <img src="{{ asset ('storage') . '/' . $apartment->img}}" alt="">
                  
+                    @endif 
+
                 </div>
             </div>
                 </div>
