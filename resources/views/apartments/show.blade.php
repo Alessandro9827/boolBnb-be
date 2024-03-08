@@ -11,12 +11,18 @@
                     </h1>
                     @if (str_starts_with($apartment->img, 'http'))
                     <img src="{{$apartment->img}}" alt="" >
+                    
+                        
+                    @else
+                        
+                        <img src="{{ asset ('storage') . '/' . $apartment->img}}" alt="">
+                 
+                    @endif 
                     <div>
                         <p>
                             {{ $apartment->description}}
                         </p>
                     </div>
-
                     <div>
                         <p>
                             La casa ha:
@@ -36,19 +42,12 @@
                             E' una casa grande {{ $apartment->square_meters}}mq, ed è situata in {{ $apartment->address}}.
                         </p>
                     </div>
-                        
-                    @else
-                        
-                        <img src="{{ asset ('storage') . '/' . $apartment->img}}" alt="">
-                 
-                    @endif 
-
+                    <a href="{{ route('user.apartments.edit', $apartment) }}" class="text-decoration-none">
+                        <button class="btn btn-sm btn-success">
+                            Edit
+                        </button>
+                    </a>
                 </div>
-                <a href="{{ route('user.apartments.edit', $apartment) }}" class="text-decoration-none">
-                    <button class="btn btn-sm btn-success">
-                        Edit
-                    </button>
-                </a>
             </div>
                 </div>
             </div>
