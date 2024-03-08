@@ -19,21 +19,21 @@
 
                     <div>
                         <p>
-                            La casa ha:
+                            The house has:
                             <ul>
                                 <li>
-                                    {{ $apartment->no_rooms}} stanze
+                                    {{ $apartment->no_rooms}} rooms
                                 </li>
                                 <li>
-                                    {{ $apartment->no_beds}} camere da letto
+                                    {{ $apartment->no_beds}} beds
                                 </li>
                                 <li>
-                                    {{ $apartment->no_bathrooms}} bagni
+                                    {{ $apartment->no_bathrooms}} bathrooms
                                 </li>
                             </ul>
                         </p>
                         <p>
-                            E' una casa grande {{ $apartment->square_meters}}mq, ed è situata in {{ $apartment->address}}.
+                            Square_meters {{ $apartment->square_meters}}mq, and is located in {{ $apartment->address}}.
                         </p>
                     </div>
                         
