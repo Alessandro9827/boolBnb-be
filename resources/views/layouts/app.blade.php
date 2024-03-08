@@ -51,11 +51,11 @@
                             @endif
                         @else
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('user.apartments.index') }}">Apartments</a>
+                                <a class="nav-link" href="{{ route('admin.apartments.index') }}">Apartments</a>
                             </li>
             
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('user.apartments.create') }}">New apartment</a>
+                                <a class="nav-link" href="{{ route('admin.apartments.create') }}">New apartment</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
