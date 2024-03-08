@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ApartmentController;
+use App\Http\Controllers\Guest\ApartmentController as GuestApartmentController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -25,4 +26,12 @@ Route::middleware('auth')
     ->prefix('user/')
     ->group(function () {
         Route::resource('apartments', ApartmentController::class);
+    });
+
+    Auth::routes();
+Route::middleware('auth')
+    ->name('guest.')
+    ->prefix('guest/')
+    ->group(function () {
+        Route::resource('apartments', GuestApartmentController::class);
     });
