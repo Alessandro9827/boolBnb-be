@@ -51,6 +51,20 @@ class ApartmentController extends Controller
         $imageSrc = Storage::put('uploads/apartments', $data['img']);
         $data['img'] = $imageSrc;
         
+        //CHIAMATA API TOMTOM PER OTTENERE LATITUDINE E LONGITUDINE
+        $apiKey = env('TOMTOM_API_KEY');
+        $addressQuery = str_replace(' ', '+', $data['address']);
+
+        $coordinate = "https://api.tomtom.com/search/2/geocode/{$addressQuery}.json?key={$apiKey}";
+
+        $json = file_get_contents($coordinate);
+        $obj = json_decode($json);
+        $lat = $obj->results[0]->position->lat;
+        $lon = $obj->results[0]->position->lon;
+        
+        $data['latitude'] = $lat;
+        $data['longitude'] = $lon;
+
         $apartment = Apartment::create($data);
         return redirect()->route('admin.apartments.show', $apartment);
     }
@@ -60,6 +74,7 @@ class ApartmentController extends Controller
      */
     public function show(Apartment $apartment)
     {
+        // dd($apartment);
         return view('admin.apartments.show', compact('apartment'));
     }
 
@@ -75,10 +90,31 @@ class ApartmentController extends Controller
      */
     public function update(Request $request, Apartment $apartment )
     {
+        // VALIDATE
         $data = $request->validate($this->rules);
-        $imageSrc = Storage::put('uploads/apartments', $data['img']);
-        $data['img'] = $imageSrc;
+        // condizione dell'immagine in cui:
+        // se l'immagine che gli mandiamo inizia con 'http', allora fa l'update normale
+        if (str_starts_with($data['img'], 'http')) {
+            $apartment->img = $data['img'];
+        } else { //invece se l'immagine è un file, allora usiamo storage
+            $imageSrc = Storage::put('uploads/apartments', $data['img']);
+            $data['img'] = $imageSrc;
+        }
         
+        //CHIAMATA API TOMTOM PER OTTENERE LATITUDINE E LONGITUDINE
+        $apiKey = env('TOMTOM_API_KEY');
+        $addressQuery = str_replace(' ', '+', $data['address']);
+
+        $coordinate = "https://api.tomtom.com/search/2/geocode/{$addressQuery}.json?key={$apiKey}";
+
+        $json = file_get_contents($coordinate);
+        $obj = json_decode($json);
+        $lat = $obj->results[0]->position->lat;
+        $lon = $obj->results[0]->position->lon;
+        
+        $data['latitude'] = $lat;
+        $data['longitude'] = $lon;
+
         $apartment->update($data);
 
         return redirect()->route('admin.apartments.show', $apartment);
