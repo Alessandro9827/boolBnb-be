@@ -37,18 +37,24 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
-                        @guest
-                            @if (Route::has('login'))
+                        @guest((Route::currentRouteName() == 'guest.recipes.index'))
+                            
+                        
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('guest.apartments.index') }}">Apartments</a>
+                            </li>
+                            
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
-                            @endif
+                            
 
-                            @if (Route::has('register'))
+                            
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
-                            @endif
+                            
+                            
                         @else
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('admin.apartments.index') }}">Apartments</a>
@@ -56,6 +62,12 @@
             
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('admin.apartments.create') }}">New apartment</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.apartments.update') }}">Edit your apartment</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.apartments.delete') }}">Destroy your apartment</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -65,13 +77,7 @@
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 
-                                    {{-- <a class="dropdown-item" href="{{ route('user.apartments.edit', $apartment) }}"
-                                        
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('user.apartments.edit').submit();">
-                                        {{ __('Edit') }}
-
-                                    </a> --}}
+                                   
                                    
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

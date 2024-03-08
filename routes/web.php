@@ -36,5 +36,6 @@ Route::middleware('auth')
     ->name('guest.')
     ->prefix('guest/')
     ->group(function () {
+        Route::get('/apartments/deleted', [AdminApartmentController::class, 'deletedIndex'])->name('apartments.deleted.index');
         Route::resource('apartments', GuestApartmentController::class);
     });
