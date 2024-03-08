@@ -10,7 +10,7 @@
             @foreach ($apartments as $apartment)
             
             <div class="col-3">
-                <a href="{{ route('user.apartments.show', $apartment) }}" class="text-decoration-none">
+                <a href="{{ route('admin.apartments.show', $apartment) }}" class="text-decoration-none">
                 <div class="card">
                             <h3>
                                 {{$apartment->title}}

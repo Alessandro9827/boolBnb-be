@@ -3,6 +3,7 @@
 use App\Http\Controllers\ApartmentController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\ApartmentController as AdminApartmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +26,12 @@ Route::middleware('auth')
     ->prefix('user/')
     ->group(function () {
         Route::resource('apartments', ApartmentController::class);
+    });
+
+Auth::routes();
+Route::middleware('auth')
+    ->name('admin.')
+    ->prefix('admin/')
+    ->group(function () {
+        Route::resource('apartments', AdminApartmentController::class);
     });
