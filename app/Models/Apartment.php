@@ -16,6 +16,7 @@ class Apartment extends Model
         'square_meters',
         'img',
         'visible',
+        'address',
         'latitude',
         'longitude',
         'price',
