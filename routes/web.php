@@ -1,9 +1,9 @@
 <?php
 
 use App\Http\Controllers\ApartmentController;
-use App\Http\Controllers\Guest\ApartmentController as GuestApartmentController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\ApartmentController as AdminApartmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,11 +27,11 @@ Route::middleware('auth')
     ->group(function () {
         Route::resource('apartments', ApartmentController::class);
     });
-
+    
     Auth::routes();
 Route::middleware('auth')
-    ->name('guest.')
-    ->prefix('guest/')
+    ->name('admin.')
+    ->prefix('admin/')
     ->group(function () {
-        Route::resource('apartments', GuestApartmentController::class);
+        Route::resource('apartments', AdminApartmentController::class);
     });
