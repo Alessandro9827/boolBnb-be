@@ -32,8 +32,8 @@ Route::middleware('auth')
     });
 
     Auth::routes();
-Route::middleware('auth')
-    ->name('guest.')
+
+Route::name('guest.')
     ->prefix('guest/')
     ->group(function () {
         Route::get('/apartments/deleted', [AdminApartmentController::class, 'deletedIndex'])->name('apartments.deleted.index');
