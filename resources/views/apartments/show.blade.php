@@ -33,7 +33,7 @@
                             </ul>
                         </p>
                         <p>
-                            Square_meters {{ $apartment->square_meters}}mq, and is located in {{ $apartment->address}}.
+                            Square meters {{ $apartment->square_meters}}mq, and is located in {{ $apartment->address}}.
                         </p>
                     </div>
                         
