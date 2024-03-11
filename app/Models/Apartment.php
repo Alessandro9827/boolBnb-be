@@ -21,6 +21,8 @@ class Apartment extends Model
         'longitude',
         'price',
         'description'
-
     ];
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 }
