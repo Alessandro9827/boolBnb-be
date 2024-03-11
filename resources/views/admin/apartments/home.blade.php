@@ -10,7 +10,7 @@
                 <div class="card-body">
                     
 
-                    {{ __('Hi user! Welcome on BoolBnB') }}
+                    Hi {{Auth::user()->name}}, welcome on BoolBnB
                 </div>
             </div>
         </div>
