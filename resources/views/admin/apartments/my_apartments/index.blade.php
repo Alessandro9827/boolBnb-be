@@ -9,18 +9,12 @@
             </h1>
             @foreach ($apartments as $apartment)
             
-            <div class="col-3">
-                <a href="{{ route('admin.my_apartments.show', $apartment) }}" class="text-decoration-none">
-                <div class="card">
+                <div class="col-3">
+                    <a href="{{ route('admin.my_apartments.show', $apartment) }}" class="text-decoration-none">
+                        <div class="card">
                             <h3>
                                 {{$apartment->title}}
                             </h3>
-                            
-                            {{-- @dump(json_decode($apartment->imgs)) --}}
-                            {{--  @foreach (json_decode($apartment->imgs) as $img)
-                            <img src="{{$img}}" alt="">
-                                
-                            @endforeach --}}
                             @if (str_starts_with($apartment->img, 'http'))
                                 <img src="{{$apartment->img}}" alt="" >
                                     
@@ -28,9 +22,10 @@
                                     
                                 <img src="{{ asset ('storage') . '/' . $apartment->img}}" alt="">
                             
-                            @endif 
+                            @endif
                         </div>
-                    </a> 
+                    </a>
+                    @dump($apartment) 
                 </div>
             @endforeach
         </div>
