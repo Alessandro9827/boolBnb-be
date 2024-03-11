@@ -59,16 +59,22 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('admin.apartments.index') }}">Apartments</a>
                             </li>
-            
+                        @if ((Route::currentRouteName() == 'admin.apartments.index'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('admin.apartments.create') }}">New apartment</a>
+                                <a class="nav-link" href="{{ route('admin.my_apartments.index') }}">My apartment</a>
                             </li>
+                        @endif
+                        @if ((Route::currentRouteName() == 'admin.my_apartments.index'))
                             {{-- <li class="nav-item">
-                                <a class="nav-link" href="{{ route('admin.apartments.update') }}">Edit your apartment</a>
+                                <a class="nav-link" href="{{ route('admin.apartments.edit') }}">Edit your apartment</a>
                             </li> --}}
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('admin.apartments.deleted') }}">Destroy your apartment</a>
+                                <a class="nav-link" {{-- href="{{ route('admin.apartments.deleted') }}" --}}>Destroy your apartment</a>
                             </li> 
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.my_apartments.create') }}">New apartment</a>
+                            </li>
+                        @endif
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
