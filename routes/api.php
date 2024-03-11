@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Guest\ApartmentController;
+use App\Http\Controllers\Api\ApartmentController;
 use App\Models\Apartment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
