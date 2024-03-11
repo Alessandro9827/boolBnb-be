@@ -29,6 +29,7 @@ Route::middleware('auth')
     ->prefix('admin/')
     ->group(function () {
         Route::resource('apartments', AdminApartmentController::class);
+        Route::delete('/apartments/{apartment}', [AdminApartmentController::class, 'destroy'])->name('apartments.destroy');
     });
 
     Auth::routes();
@@ -36,6 +37,5 @@ Route::middleware('auth')
 Route::name('guest.')
     ->prefix('guest/')
     ->group(function () {
-        Route::get('/apartments/deleted', [AdminApartmentController::class, 'deletedIndex'])->name('apartments.deleted.index');
         Route::resource('apartments', GuestApartmentController::class);
     });
