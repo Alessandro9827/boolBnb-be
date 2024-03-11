@@ -29,6 +29,9 @@ Route::middleware('auth')
     ->prefix('admin/')
     ->group(function () {
         Route::get('/apartments/deleted', [AdminApartmentController::class, 'deletedAparments'])->name('apartments.deleted');
+        Route::get('/apartments/deleted/{apartment}', [AdminApartmentController::class, 'deletedShow'])->name('apartments.deleted.show');
+        Route::patch('/apartments/deleted/{apartment}', [AdminApartmentController::class, 'deletedRestore'])->name('apartments.deleted.restore');
+        
         Route::delete('/apartments/{apartment}', [AdminApartmentController::class, 'destroy'])->name('apartments.destroy');
         Route::resource('apartments', AdminApartmentController::class);
         Route::get('/home', function (){

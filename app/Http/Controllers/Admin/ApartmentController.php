@@ -141,17 +141,16 @@ class ApartmentController extends Controller
         return view('admin.apartments.deleted', compact('apartments'));
     }
 
-    // public function deletedShow(string $id){
+    public function deletedShow(string $id){
+        $apartment = Apartment::withTrashed()->where('id', $id)->first();
+        return view('admin.apartments.deleted-show', compact('apartment'));
+    }
 
-    //     $apartment = Apartment::withTrashed()->where('id', $id)->first();
-        
-    //     return view('admin.apartment.deleted-show', compact('apartment'));
-    // }
-
-    // public function deletedRestore(string $id){
-    //     $apartment = Apartment::withTrashed()->where('id', $id)->first();
-    //     $apartment->restore();
-    // }
+    public function deletedRestore(string $id){
+        $apartment = Apartment::withTrashed()->where('id', $id)->first();
+        $apartment->restore();
+        return redirect()->route('admin.apartments.show', $apartment);
+    }
 
     // public function deletedDestroy(string $id){
 
