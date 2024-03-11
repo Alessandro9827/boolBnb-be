@@ -50,8 +50,14 @@
                             Edit
                         </button>
                     </a>
-                </div>
-            </div>
+                    <form class="d-inline-block apartment-eraser"  action="{{ route('admin.apartments.destroy', $apartment) }}" method="POST" data-apartment-name="{{ $apartment['title'] }}">
+                        @csrf
+                        @method('DELETE')
+
+                        <button class="btn btn-sm btn-warning" >
+                            elimina
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
