@@ -28,10 +28,13 @@ Route::middleware('auth')
     ->name('admin.')
     ->prefix('admin/')
     ->group(function () {
+        Route::get('/apartments/deleted', [AdminApartmentController::class, 'deletedAparments'])->name('apartments.deleted');
+        Route::delete('/apartments/{apartment}', [AdminApartmentController::class, 'destroy'])->name('apartments.destroy');
         Route::resource('apartments', AdminApartmentController::class);
         Route::get('/home', function (){
-            return view('admin.apartments.home');
+            return view('admin.apartments.home'); 
         });
+     
     });
 
     Auth::routes();
