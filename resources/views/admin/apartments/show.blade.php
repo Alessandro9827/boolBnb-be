@@ -38,6 +38,9 @@
                                 </li>
                             </ul>
                         </p>
+                        <p class="card-text">
+                            User of the apartment: {{isset($apartment->user_id) ? $apartment->user->name : 'Nessuno'  }}          
+                          </p>
                         <p>
                             Square meters {{ $apartment->square_meters}}mq, and is located in {{ $apartment->address}}.
                         </p>

@@ -3,6 +3,7 @@
 return [ 'apartments' => [
 
     [
+        "user_id" => 1,
         "img" => "https://a0.muscache.com/im/pictures/miso/Hosting-1060808506263454126/original/1ebeda2a-7ea4-4357-96c1-ee57c1ee5586.jpeg?im_w=960",
         "title" => "Casa Frontemare con accesso al mare esclusivo",
         "no_rooms" => 2,
@@ -17,6 +18,7 @@ return [ 'apartments' => [
         "description" => "Casa Frontemare è una proprietà completamente ristrutturata con accesso diretto al mare, dalla quale è possibile godere di una vista panoramica sul mare, sulle isole toscane e di meravigliosi tramonti. E' un luogo perfetto per gli amanti di una vacanza all'insegna del relax e della privacy. La vicinanza alle città d'arte toscane e ai piccoli borghi tipici fa si che sia possibile anche andare alla scoperta di nuovi luoghi e scoprire i sapori della cucina italiana.",
     ],
     [
+        "user_id" => 1,
         "img" => "https://a0.muscache.com/im/pictures/2301cd46-d0cc-4ff0-a8a0-252cb2b08c78.jpg?im_w=960",
         "title" => "Attico Villa Fresca",
         "no_rooms" => 3,
@@ -31,6 +33,7 @@ return [ 'apartments' => [
         "description" => "Rilassati in questo luogo unico e accogliente.",
     ],
     [
+        "user_id" => 1,
         "img" => "https://a0.muscache.com/im/pictures/prohost-api/Hosting-681745052255685280/original/c001ca4c-4a27-457e-bf85-740b211a2584.jpeg?im_w=960",
         "title" => "Villa Duna accesso sul mare Terracina e Sperlonga",
         "no_rooms" => 8,
@@ -55,6 +58,7 @@ return [ 'apartments' => [
        ",
     ],
     [
+        
         "img" => "https://a0.muscache.com/im/pictures/cce3b40d-41c2-40bc-925b-2cf1fbc79932.jpg?im_w=960",
         "title" => "Villa indipendente con discesa privata al mare",
         "no_rooms" => 4,
@@ -73,6 +77,7 @@ return [ 'apartments' => [
 
 
     [
+        
         "img" => "https://a0.muscache.com/im/pictures/575769db-5ee8-4bea-b79e-2b6e36b0c0bf.jpg?im_w=960",
         "title" => "Villa Mimosa - villa sul mare con piscina",
         "no_rooms" => 6,
@@ -95,6 +100,7 @@ return [ 'apartments' => [
         Al piano inferiore si trovano due camere da letto matrimoniali con rispettivi bagni e una camera singola con bagno.",
     ],
     [
+        
         "img" => "https://a0.muscache.com/im/pictures/90d7715f-5589-4795-985c-d1118884aeaa.jpg?im_w=960",
         "title" => "Cottage Storhogna",
         "no_rooms" => 4,
@@ -113,6 +119,7 @@ return [ 'apartments' => [
         Al piano inferiore ci sono tre camere da letto. Camera 1 con letto matrimoniale 160 cm, camera da letto 2.3 con letto matrimoniale(piano). C'è anche una sauna, una doccia e una lavatrice con doccia e lavatrice. Nel loft si trova un grande divano letto con camera per 2-3 persone.",
     ],
     [
+        "user_id" => 1,
         "img" => "https://a0.muscache.com/im/pictures/06214bdf-2ff2-4173-b92c-9e61693095ab.jpg?im_w=960",
         "title" => "Fjällstugan 1 a Bruksvallarna",
         "no_rooms" => 3,
@@ -139,6 +146,7 @@ return [ 'apartments' => [
         Intero appartamento",
     ],
     [
+        
         "img" => "https://a0.muscache.com/im/pictures/64b80b7d-cac0-4066-8ba7-5853c16943a4.jpg?im_w=960",
         "title" => "CASA SULL'ALBERO DI BALIAN con splendida piscina",
         "no_rooms" => 1,
@@ -158,6 +166,7 @@ return [ 'apartments' => [
         
     ],
     [
+        
         "img" => "https://a0.muscache.com/im/pictures/hosting/Hosting-1070265013885213861/original/a0465672-e771-4bf7-842d-0b7f1b6d71cb.jpeg?im_w=960",
         "title" => "Casa Ana-luxe Villa , fronte oceano, servizio a 5 stelle",
         "no_rooms" => 2,
@@ -173,6 +182,7 @@ return [ 'apartments' => [
         
     ],
     [
+        
         "img" => "https://a0.muscache.com/im/pictures/7d2300ef-eaed-4882-8ae5-d0912bae548e.jpg?im_w=720",
         "title" => "Dolce notte sotto le stelle",
         "no_rooms" => 1,
@@ -187,6 +197,7 @@ return [ 'apartments' => [
         "description" => "La struttura in legno avvolgente dello zôme, aperta in cima alle stelle grazie alla sua finestra a 6 fili di rose, ti accoglie per una visita di puro relax e distacco. Al fine di preservare l'impatto ambientale, lo zôme è stato progettato al fine di ridurre il più possibile la sua impronta ecologica. È quindi gestito in modo eco-responsabile, con l'approvvigionamento di acqua tramite un sistema di pompa a batteria, elettricità da un pannello solare e servizi igienici asciutti. Questo spazio di cocooning ti aspetta e ti offre relax con le sue letture, i giochi di parole o i giochi da tavolo. Puoi anche avere la possibilità di meditare (ti aspettano 2 sgabelli e tappetini). È riservato uno spazio all'aperto tranquillo, dove potrai rilassarti su sdraio e un'amaca per 2 persone. Oppure resta impegnato a giocare a Molki, freccette, racchette, pétanque... E se vuoi visitare la regione multiete, un quaderno è a tua disposizione con una serie di attività da praticare : escursioni dalla zôme, visite turistiche da Cayides (città medievale)... Se non vuoi uscire a cena, hai in loco e in qualsiasi momento vuoi un servizio di catering fornendo piatti biologici e stagionali al 100% (singoli bicchieri in scatola - cucina a bassa temperatura) e rendibili sul posto che puoi consumare all'interno o all'esterno. Se la luce naturale non è sufficiente per ricaricare il pannello solare, non preoccuparti: avrai a disposizione delle luci ausiliarie per mantenere un'illuminazione costante durante la serata.",
     ],
     [
+        
         "img" => "https://a0.muscache.com/im/pictures/miso/Hosting-870018156972269427/original/4adf4013-03d6-4313-9486-c1ef193e13dc.jpeg?im_w=960",
         "title" => "Appartamento Zemljanka - Earth House",
         "no_rooms" => 1,
