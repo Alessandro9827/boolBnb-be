@@ -24,8 +24,7 @@
                             
                             @endif
                         </div>
-                    </a>
-                    @dump($apartment) 
+                    </a> 
                 </div>
             @endforeach
         </div>
