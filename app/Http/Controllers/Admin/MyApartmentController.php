@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Apartment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -13,6 +14,7 @@ class MyApartmentController extends Controller
 {
     private $rules = [
         'title' => ['required', 'min:5', 'max:255', 'string'],
+        'user_id' => ['exists:users,id'],
         'no_rooms' => ['required', 'min:1', 'max:100', 'integer'],
         'no_beds' => ['required', 'min:1', 'max:100', 'integer'],
         'no_bathrooms' => ['required', 'min:1', 'max:10', 'integer'],
@@ -28,7 +30,9 @@ class MyApartmentController extends Controller
 
     public function index()
     {
-        $apartments = Apartment::all();
+        $apartments = Apartment::where('user_id', Auth::id())->get();
+
+        // dd($apartments);
         return view('admin.apartments.my_apartments.index', compact('apartments'));
     }
 
@@ -49,6 +53,8 @@ class MyApartmentController extends Controller
         
         // dd($request->all());
         $data = $request->validate($this->rules);
+        $data['user_id'] = Auth::id();
+        
 
         $imageSrc = Storage::put('uploads/apartments', $data['img']);
         $data['img'] = $imageSrc;
@@ -68,15 +74,15 @@ class MyApartmentController extends Controller
         $data['longitude'] = $lon;
 
         $apartment = Apartment::create($data);
-        return redirect()->route('admin.my_apartments.apartments.show', $apartment);
+        return redirect()->route('admin.my_apartments.show', $apartment);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Apartment $apartment)
+    public function show(string $id)
     {
-        // dd($apartment);
+        $apartment = Apartment::findOrFail($id);
         return view('admin.apartments.my_apartments.show', compact('apartment'));
     }
 
@@ -94,6 +100,7 @@ class MyApartmentController extends Controller
     {
         // VALIDATE
         $data = $request->validate($this->rules);
+        $data['user_id'] = Auth::id();
         // condizione dell'immagine in cui:
         // se l'immagine che gli mandiamo inizia con 'http', allora fa l'update normale
         if (str_starts_with($data['img'], 'http')) {
@@ -142,4 +149,25 @@ class MyApartmentController extends Controller
         
         return view('admin.apartments.my_apartments.deleted', compact('apartments'));
     }
+
+    public function deletedShow(string $id){
+        $apartment = Apartment::withTrashed()->where('id', $id)->first();
+        return view('admin.apartments.my_apartments.deleted-show', compact('apartment'));
+    }
+
+    public function deletedRestore(string $id){
+        $apartment = Apartment::withTrashed()->where('id', $id)->first();
+        $apartment->restore();
+        return redirect()->route('admin.apartments.my_apartments.show', $apartment);
+    }
+
+    // public function deletedDestroy(string $id){
+
+    //     $apartment = Apartment::withTrashed()->where('id', $id)->first();
+
+       
+    //     $apartment->forceDelete () ;
+    //     return redirect () ->route ('admin.apartment.deleted.index') ;    
+
+    // }
 }
