@@ -125,37 +125,41 @@ class ApartmentController extends Controller
      */
     public function destroy(Apartment $apartment)
     {
+        
         $apartment->delete();
         
-        return redirect()->route('admin.apartment.index');
+        return redirect()->route('admin.apartments.index');
     }
 
-
-    public function deletedIndex(){
-        $apartment = Apartment::onlyTrashed()->get();
+    /**
+     * Show the list of soft deleted resources
+     */
+    public function deletedAparments() 
+    {
+        $apartments = Apartment::onlyTrashed()->get();
         
-        return view('admin.apartment.deleted-index', compact('apartments'));
+        return view('admin.apartments.deleted', compact('apartments'));
     }
 
-    public function deletedShow(string $id){
+    // public function deletedShow(string $id){
 
-        $apartment = Apartment::withTrashed()->where('id', $id)->first();
+    //     $apartment = Apartment::withTrashed()->where('id', $id)->first();
         
-        return view('admin.apartment.deleted-show', compact('apartment'));
-    }
+    //     return view('admin.apartment.deleted-show', compact('apartment'));
+    // }
 
-    public function deletedRestore(string $id){
-        $apartment = Apartment::withTrashed()->where('id', $id)->first();
-        $apartment->restore();
-    }
+    // public function deletedRestore(string $id){
+    //     $apartment = Apartment::withTrashed()->where('id', $id)->first();
+    //     $apartment->restore();
+    // }
 
-    public function deletedDestroy(string $id){
+    // public function deletedDestroy(string $id){
 
-        $apartment = Apartment::withTrashed()->where('id', $id)->first();
+    //     $apartment = Apartment::withTrashed()->where('id', $id)->first();
 
        
-        $apartment->forceDelete () ;
-        return redirect () ->route ('admin.apartment.deleted.index') ;    
+    //     $apartment->forceDelete () ;
+    //     return redirect () ->route ('admin.apartment.deleted.index') ;    
 
-    }
+    // }
 }
