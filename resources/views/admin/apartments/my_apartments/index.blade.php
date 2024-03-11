@@ -15,6 +15,7 @@
                             <h3>
                                 {{$apartment->title}}
                             </h3>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et ab, provident quisquam reiciendis est dolor voluptatem eaque, dolore, doloremque quia nam praesentium itaque! Fugiat, reprehenderit nihil eum sit molestias quo.</p>
                             {{-- @dump(json_decode($apartment->imgs)) --}}
                             {{--  @foreach (json_decode($apartment->imgs) as $img)
                             <img src="{{$img}}" alt="">
