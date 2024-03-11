@@ -45,24 +45,6 @@
                             Square meters {{ $apartment->square_meters}}mq, and is located in {{ $apartment->address}}.
                         </p>
                     </div>
-                    <div>
-                        <a href="{{ route('admin.apartments.edit', $apartment) }}" class="text-decoration-none d-inline-block">
-                            <button class="btn btn-sm btn-success">
-                                Edit
-                            </button>
-                        </a>
-    
-                        <form class="d-inline-block apartment-eraser"  action="{{ route('admin.apartments.destroy', $apartment) }}" method="POST" data-apartment-name="{{ $apartment['title'] }}">
-                            @csrf
-                            @method('DELETE')
-    
-                            <button class="btn btn-sm btn-warning" >
-                                elimina
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
                 </div>
             </div>
         </div>

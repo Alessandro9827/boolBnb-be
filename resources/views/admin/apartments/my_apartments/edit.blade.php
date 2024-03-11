@@ -4,7 +4,7 @@
 
 
 @section('form-action')
-    {{ route('admin.apartments.update', $apartment) }}
+    {{ route('admin.my_apartments.update', $apartment) }}
 @endsection
 
 @section('form-method')
