@@ -17,6 +17,7 @@ class ApartmentSeeder extends Seeder
 
         foreach ($apartments as $apartment) {
             $newApartment = new Apartment();
+            isset($apartment['user_id']) ? $newApartment->user_id = $apartment['user_id'] : $newApartment->user_id = NULL;
             $newApartment->title = $apartment['title'];
             $newApartment->no_rooms = $apartment['no_rooms'];
             $newApartment->no_beds = $apartment['no_beds'];

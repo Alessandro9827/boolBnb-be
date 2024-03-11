@@ -25,5 +25,5 @@ class ResetPasswordController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/admin/apartments';
+    protected $redirectTo = '/admin/home';
 }

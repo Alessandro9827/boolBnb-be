@@ -14,6 +14,7 @@ class Apartment extends Model
     
     protected $fillable = [
         'title',
+        'user_id',
         'no_rooms',
         'no_beds',
         'no_bathrooms',
@@ -25,6 +26,8 @@ class Apartment extends Model
         'longitude',
         'price',
         'description'
-
     ];
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 }

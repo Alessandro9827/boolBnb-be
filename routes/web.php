@@ -18,7 +18,7 @@ use App\Http\Controllers\Guest\ApartmentController as GuestApartmentController;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('guest.home');
 });
 
 
@@ -28,9 +28,10 @@ Route::middleware('auth')
     ->name('admin.')
     ->prefix('admin/')
     ->group(function () {
-        Route::get('/apartments/deleted', [AdminApartmentController::class, 'deletedAparments'])->name('apartments.deleted');
         Route::resource('apartments', AdminApartmentController::class);
-        Route::delete('/apartments/{apartment}', [AdminApartmentController::class, 'destroy'])->name('apartments.destroy');
+        Route::get('/home', function (){
+            return view('admin.apartments.home');
+        });
     });
 
     Auth::routes();
