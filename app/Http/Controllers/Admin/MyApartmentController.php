@@ -114,7 +114,7 @@ class MyApartmentController extends Controller
         $apiKey = env('TOMTOM_API_KEY');
         $addressQuery = str_replace(' ', '+', $data['address']);
 
-        $coordinate = "https://api.tomtom.com/search/2/geocode/{$addressQuery}.json?key={$apiKey}";
+        $coordinate = "https://api.tomtom.com/search/2/search/{$addressQuery}.json?key={$apiKey}";
 
         $json = file_get_contents($coordinate);
         $obj = json_decode($json);
