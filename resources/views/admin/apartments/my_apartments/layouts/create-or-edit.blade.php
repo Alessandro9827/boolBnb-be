@@ -44,9 +44,13 @@
                     <label for="square_meters">Square meters</label>
                     <input type="number" class="form-control d-inline w-50" id="square_meters" name="square_meters" value="{{old('square_meters', $apartment->square_meters)}}">
                 </div>
-                <div class="form-group mb-3">
+                <div class="form-group position-relative mb-3">
                     <label for="address">Address of the apartment *</label>
                     <input type="text" class="form-control" id="address" name="address" value="{{old('address', $apartment->address)}}">
+                    
+                    <ul id="searchResults" class="position-absolute d-none" >
+
+                    </ul>
                 </div>
                 {{-- <div class="form-group mb-3">
                     <label>Select if u want to put an url or upload a file</label>
@@ -78,8 +82,8 @@
         </div>
     </div>
 </div>
+@endsection
 
-
-
-
+@section('scripts')
+    <script src="../../../../js/app.js"></script>
 @endsection
