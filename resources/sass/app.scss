@@ -6,3 +6,16 @@
 
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
+
+
+ul#searchResults{
+    list-style: none;
+    top: 50px;
+    background-color: white;
+    z-index: 1;
+    padding: 1rem;
+    border-radius: 10px;
+    li {
+        padding: .5rem; 
+    }
+}
