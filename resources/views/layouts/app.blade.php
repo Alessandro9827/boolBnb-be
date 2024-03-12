@@ -54,13 +54,13 @@
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>  
                         @else
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a class="nav-link" href="{{ route('admin.apartments.index') }}">Apartments</a>
-                            </li>
-                        @if ((Route::currentRouteName() == 'admin.apartments.index'))
-                            <li class="nav-item">
+                            </li> --}}
+                        @if ((Route::currentRouteName() == 'admin.my_apartments.index'))
+                            {{-- <li class="nav-item">
                                 <a class="nav-link" href="{{ route('admin.my_apartments.index') }}">My apartment</a>
-                            </li>
+                            </li> --}}
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('admin.my_apartments.create') }}">New apartment</a>
                             </li>

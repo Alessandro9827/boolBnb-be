@@ -48,12 +48,12 @@ Route::name('guest.')
 
     Auth::routes();
 
-Route::middleware('auth')
-        ->name('admin.')
-        ->prefix('admin/')
-        ->group(function () {
-            Route::resource('apartments', AdminApartmentController::class);
-            Route::get('/home', function (){
-                return view('admin.apartments.home');
-            }); 
-        });
+// Route::middleware('auth')
+//         ->name('admin.')
+//         ->prefix('admin/')
+//         ->group(function () {
+//             Route::resource('apartments', AdminApartmentController::class);
+//             Route::get('/home', function (){
+//                 return view('admin.apartments.home');
+//             }); 
+//         });
