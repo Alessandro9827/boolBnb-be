@@ -11,7 +11,7 @@ addressInput.addEventListener ('input', function() {
     const inputValue = this.value.replace(" ", "+");
     ulElement.innerHTML = '';
     const apiKey='9B3Txp0d4DICteHUwWohHtaZOMm3WCUY';
-    let coordinate = `https://api.tomtom.com/search/2/search/${inputValue}.json?key=${apiKey}`;
+    let coordinate = `https://api.tomtom.com/search/2/search/${inputValue}.json?key=${apiKey}&countrySet=IT`;
         
     async function file_get_contents(uri, callback) {
         let res = await fetch(uri),
