@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 @section('content')
 
@@ -73,4 +73,4 @@
             if (confirmWindow) this.submit();
         });
     </script>
-@endsection
+@endsection --}}

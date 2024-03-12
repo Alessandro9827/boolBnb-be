@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -20,7 +20,7 @@
                             <img src="{{$img}}" alt="">
                                 
                             @endforeach --}}
-                            @if (str_starts_with($apartment->img, 'http'))
+                            {{-- @if (str_starts_with($apartment->img, 'http'))
                                 <img src="{{$apartment->img}}" alt="" >
                                     
                             @else
@@ -34,4 +34,4 @@
             @endforeach
         </div>
     </div>
-@endsection
+@endsection  --}}
