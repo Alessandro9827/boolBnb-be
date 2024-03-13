@@ -16,12 +16,12 @@ class ApartmentServiceSeeder extends Seeder
      */
     public function run(Faker $faker): void
     {
-        // $apartments = Apartment::all();
-        // $services = Service::all()->pluck('id');
+        $apartments = Apartment::all();
+        $services = Service::all()->pluck('id');
 
-        // foreach ($apartments as $apartment) {
-        //     $apartment->services()->sync($faker->randomElements( $services, rand(1,4), false ));
-        // }
+        foreach ($apartments as $apartment) {
+            $apartment->services()->sync($faker->randomElements( $services, rand(1,4), false ));
+        }
     
         
     }
