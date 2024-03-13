@@ -21,5 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::name('api.')->group(function () {
     Route::get('/guest/apartments', [ApartmentController::class, 'index'])->name('guest.apartments.index');
+    Route::get('/guest/apartments/search', [ApartmentController::class, 'search'])->name('guest.apartments.search');
     Route::get('/guest/apartments/{guest}', [ApartmentController::class, 'show'])->name('guest.apartments.show');
 });

@@ -28,10 +28,10 @@ class ApartmentController extends Controller
     public function search(Request $request){
         $data = $request->all();
 
-        if ( isset($data['title'])){
-            $stringa = $data['title'];
-            $apartments = Apartment::where('title', 'LIKE', "%{$stringa}%")->get();
-        } elseif ( is_null($data['title'])) {
+        if ( isset($data['address'])){
+            $stringa = $data['address'];
+            $apartments = Apartment::where('address', 'LIKE', "%{$stringa}%")->get();
+        } elseif ( is_null($data['address'])) {
             $apartments = Apartment::all();
         } else {
             abort(404);
