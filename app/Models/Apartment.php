@@ -31,7 +31,7 @@ class Apartment extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function service(){
+    public function services(){
         return $this->belongsToMany(Service::class);
     }
 }
