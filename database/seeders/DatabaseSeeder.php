@@ -20,7 +20,10 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this -> call([
             UserSeeder::class,
-            ApartmentSeeder::class
+            ServiceSeeder::class,
+            ApartmentSeeder::class,
+            ApartmentServiceSeeder::class
+
         ]);
     }
 }
