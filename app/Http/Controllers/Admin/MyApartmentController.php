@@ -125,7 +125,7 @@ class MyApartmentController extends Controller
 
         $apartment->update($data);
 
-        return redirect()->route('admin.apartments.my_apartments.show', $apartment);
+        return redirect()->route('admin.my_apartments.show', $apartment);
     }
 
     /**

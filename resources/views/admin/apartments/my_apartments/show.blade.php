@@ -45,7 +45,7 @@
                             Square meters {{ $apartment->square_meters}}mq, and is located in {{ $apartment->address}}.
                         </p>
                     </div>
-                    <a href="{{ route('admin.apartments.edit', $apartment) }}" class="text-decoration-none">
+                    <a href="{{ route('admin.my_apartments.edit', $apartment) }}" class="text-decoration-none">
                         <button class="btn btn-sm btn-success">
                             Edit
                         </button>
