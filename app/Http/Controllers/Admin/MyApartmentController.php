@@ -80,9 +80,8 @@ class MyApartmentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Apartment $apartment)
     {
-        $apartment = Apartment::findOrFail($id);
         return view('admin.apartments.my_apartments.show', compact('apartment'));
     }
 
@@ -137,7 +136,7 @@ class MyApartmentController extends Controller
         
         $apartment->delete();
         
-        return redirect()->route('admin.apartments.my_apartments.index');
+        return redirect()->route('admin.my_apartments.index');
     }
 
     /**
@@ -147,7 +146,7 @@ class MyApartmentController extends Controller
     {
         $apartments = Apartment::onlyTrashed()->get();
         
-        return view('admin.apartments.my_apartments.deleted', compact('apartments'));
+        return view('admin.my_apartments.deleted', compact('apartments'));
     }
 
     public function deletedShow(string $id){
