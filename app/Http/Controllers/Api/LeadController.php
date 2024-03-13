@@ -21,20 +21,22 @@ class LeadController extends Controller
             'date' => 'required',
         ]);
 
-        if($validator->false()){
+        if($validator->fails()){
             return response()->json([
                 'success' => false,
-                'errors' => $validator->errors(),
+                'errors'  => $validator->errors(),
             ]);
         }
 
         $newLead = new Lead();
-        $newLead->create($data);
+        $newLead = $newLead->create($data);
+        // dd(new NewContact($newLead));
 
-        Mail::to("admin@boolbnb")->send(new NewContact($newLead));
+        // # Invio la mail
+        Mail::to("admin@boolbnb.com")->send(new NewContact($newLead));
 
         return response()->json([
-            'success' => true, 
+            'success' => true,
         ]);
     }
 }

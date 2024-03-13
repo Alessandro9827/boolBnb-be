@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Models\Lead;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -15,12 +16,13 @@ class NewContact extends Mailable
 
 
     public $lead;
+
     /**
      * Create a new message instance.
      */
-    public function __construct($_lead)
+    public function __construct(Lead $lead)
     {
-        $this->lead = $_lead;
+        $this->lead = $lead;
     }
 
     /**
@@ -29,7 +31,6 @@ class NewContact extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-
             replyTo: $this->lead->email,
             subject: 'New Contact',
         );
@@ -45,13 +46,4 @@ class NewContact extends Mailable
         );
     }
 
-    /**
-     * Get the attachments for the message.
-     *
-     * @return array<int, \Illuminate\Mail\Mailables\Attachment>
-     */
-    public function attachments(): array
-    {
-        return [];
-    }
 }
