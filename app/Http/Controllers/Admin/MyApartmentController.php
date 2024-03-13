@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Apartment;
+use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -15,6 +16,7 @@ class MyApartmentController extends Controller
     private $rules = [
         'title' => ['required', 'min:5', 'max:255', 'string'],
         'user_id' => ['exists:users,id'],
+        
         'no_rooms' => ['required', 'min:1', 'max:100', 'integer'],
         'no_beds' => ['required', 'min:1', 'max:100', 'integer'],
         'no_bathrooms' => ['required', 'min:1', 'max:10', 'integer'],
@@ -26,6 +28,7 @@ class MyApartmentController extends Controller
         'longitude' => ['min:4', 'max:6', 'float'],
         'price' => ['required', 'min:10', 'max:100000', 'numeric'],
         'description' => ['nullable', 'min:10', 'string'],
+        'services' => ['exists:services,id'],
     ];
 
     public function index()
@@ -42,7 +45,8 @@ class MyApartmentController extends Controller
     public function create(Apartment $apartment)
     {
         $apartment = new Apartment();
-        return view('admin.apartments.my_apartments.create', compact('apartment'));
+        $service = Service::all();
+        return view('admin.apartments.my_apartments.create', compact('apartment', 'services'));
     }
 
     /**
@@ -54,6 +58,7 @@ class MyApartmentController extends Controller
         // dd($request->all());
         $data = $request->validate($this->rules);
         $data['user_id'] = Auth::id();
+        
         
 
         $imageSrc = Storage::put('uploads/apartments', $data['img']);
@@ -74,6 +79,7 @@ class MyApartmentController extends Controller
         $data['longitude'] = $lon;
 
         $apartment = Apartment::create($data);
+        $apartment->services()->sync($data['services']);
         return redirect()->route('admin.my_apartments.show', $apartment);
     }
 
@@ -89,7 +95,10 @@ class MyApartmentController extends Controller
      * Show the form for editing the specified resource.
      */
     public function edit(Apartment $apartment){
-        return view('admin.apartments.my_apartments.edit', compact('apartment'));
+
+        $service = Service::all();
+      
+        return view('admin.apartments.my_apartments.edit', compact('apartment', 'services'));
     }
 
     /**
@@ -100,6 +109,7 @@ class MyApartmentController extends Controller
         // VALIDATE
         $data = $request->validate($this->rules);
         $data['user_id'] = Auth::id();
+        $apartment->services()->sync($data['services']);
         // condizione dell'immagine in cui:
         // se l'immagine che gli mandiamo inizia con 'http', allora fa l'update normale
         if (str_starts_with($data['img'], 'http')) {
