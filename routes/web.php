@@ -35,7 +35,13 @@ Route::middleware('auth')
         Route::patch('/my_apartments/deleted/{apartment}', [MyApartmentController::class, 'deletedRestore'])->name('apartments.deleted.restore');
         
         Route::delete('/my_apartments/{apartment}', [MyApartmentController::class, 'destroy'])->name('apartments.destroy');
-        Route::resource('my_apartments', MyApartmentController::class);
+        // Route::resource('my_apartments', MyApartmentController::class);
+        Route::get('/my_apartments', [MyApartmentController::class, 'index'])->name('my_apartments.index');
+        Route::post('/my_apartments', [MyApartmentController::class, 'store'])->name('my_apartments.store');
+        Route::get('/my_apartments/create', [MyApartmentController::class, 'create'])->name('my_apartments.create');
+        Route::get('/my_apartments/{apartment}', [MyApartmentController::class, 'show'])->name('my_apartments.show');
+        Route::put('/my_apartments/{apartment}', [MyApartmentController::class, 'update'])->name('my_apartments.update');
+        Route::get('/my_apartments/{apartment}/edit', [MyApartmentController::class, 'edit'])->name('my_apartments.edit');
     });
 
     Auth::routes();
