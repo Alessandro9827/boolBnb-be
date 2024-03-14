@@ -45,7 +45,7 @@ class MyApartmentController extends Controller
     public function create(Apartment $apartment)
     {
         $apartment = new Apartment();
-        $service = Service::all();
+        $services = Service::all();
         return view('admin.apartments.my_apartments.create', compact('apartment', 'services'));
     }
 
