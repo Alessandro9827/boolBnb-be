@@ -10,6 +10,10 @@ class Lead extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'email', 'message', 'date'
+        'name', 'email', 'message', 'date', 'apartment_id',
     ];
+
+    public function apartaments() {
+        return $this->hasMany(Apartment::class);
+    }
 }

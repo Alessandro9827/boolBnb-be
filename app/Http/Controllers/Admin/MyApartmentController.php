@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Apartment;
+use App\Models\Lead;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -88,7 +89,20 @@ class MyApartmentController extends Controller
      */
     public function show(Apartment $apartment)
     {
-        return view('admin.apartments.my_apartments.show', compact('apartment'));
+        $leads = Lead::all();
+        $service = Service::all();
+    
+        $leadCorrect = null; // Inizializzo $leadCorrect a null per gestire il caso in cui non ci siano lead corrispondenti
+        
+        foreach ($leads as $lead) {
+            if ($lead->aparment_id === $apartment->id) {
+                $leadCorrect = $lead;
+                break; // Esci dal ciclo foreach se trovi un lead corrispondente
+            }
+        }
+        
+         dd($leads);
+        return view('admin.apartments.my_apartments.show', compact('apartment', 'leadCorrect'));
     }
 
     /**

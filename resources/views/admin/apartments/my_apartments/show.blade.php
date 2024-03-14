@@ -44,6 +44,10 @@
                         <p>
                             Square meters {{ $apartment->square_meters}}mq, and is located in {{ $apartment->address}}.
                         </p>
+                        <p>
+                            {{-- messaggio: {{isset($apartment->lead->message) ? $apartment->lead->message : 'Non ci sono messaggi!' }} --}}
+                            Messaggio: {{ $leadCorrect->message }}
+                        </p>
                     </div>
                     <a href="{{ route('admin.my_apartments.edit', $apartment) }}" class="text-decoration-none">
                         <button class="btn btn-sm btn-success">
