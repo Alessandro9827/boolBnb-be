@@ -13,7 +13,7 @@ class Lead extends Model
         'name', 'email', 'message', 'date', 'apartment_id',
     ];
 
-    public function apartaments() {
-        return $this->hasMany(Apartment::class);
+    public function apartament() {
+        return $this->belongsTo(Apartment::class);
     }
 }
