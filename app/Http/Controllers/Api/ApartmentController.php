@@ -10,7 +10,7 @@ class ApartmentController extends Controller
 {
     public function index(){
         // ? EAGER LOADING con il nome del metodo presente all'interno del model
-        $apartments = Apartment::with('user')->with('lead')->paginate(20);
+        $apartments = Apartment::with('user')->paginate(20);
         return response()->json(
             [
                 "success" => true,

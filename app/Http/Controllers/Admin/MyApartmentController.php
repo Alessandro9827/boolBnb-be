@@ -34,7 +34,7 @@ class MyApartmentController extends Controller
 
     public function index()
     {
-        $apartments = Apartment::where('user_id', Auth::id())->get();
+        $apartments = Apartment::where('user_id', Auth::id())->with('leads')->get();
 
         // dd($apartments);
         return view('admin.apartments.my_apartments.index', compact('apartments'));
@@ -62,8 +62,11 @@ class MyApartmentController extends Controller
         
         
 
-        $imageSrc = Storage::put('uploads/apartments', $data['img']);
-        $data['img'] = $imageSrc;
+        // $imageSrc = Storage::put('uploads/apartments', $data['img']);
+        // $data['img'] = $imageSrc;
+        $imageSrc = Storage::put('uploads/Apartments', $data['img']);             
+        $imageUrl = Storage::url($imageSrc);             
+        $data['img'] = $imageUrl;
         
         //CHIAMATA API TOMTOM PER OTTENERE LATITUDINE E LONGITUDINE
         $apiKey = env('TOMTOM_API_KEY');
@@ -80,7 +83,7 @@ class MyApartmentController extends Controller
         $data['longitude'] = $lon;
 
         $apartment = Apartment::create($data);
-        $apartment->services()->sync($data['services']);
+        // $apartment->services()->sync($data['services']);
         return redirect()->route('admin.my_apartments.show', $apartment);
     }
 
@@ -89,20 +92,14 @@ class MyApartmentController extends Controller
      */
     public function show(Apartment $apartment)
     {
-        $leads = Lead::all();
+        
         $service = Service::all();
     
-        $leadCorrect = null; // Inizializzo $leadCorrect a null per gestire il caso in cui non ci siano lead corrispondenti
         
-        foreach ($leads as $lead) {
-            if ($lead->aparment_id === $apartment->id) {
-                $leadCorrect = $lead;
-                break; // Esci dal ciclo foreach se trovi un lead corrispondente
-            }
-        }
         
-         dd($leads);
-        return view('admin.apartments.my_apartments.show', compact('apartment', 'leadCorrect'));
+        
+        //  dd($leads);
+        return view('admin.apartments.my_apartments.show', compact('apartment'));
     }
 
     /**
@@ -112,7 +109,7 @@ class MyApartmentController extends Controller
 
         $service = Service::all();
       
-        return view('admin.apartments.my_apartments.edit', compact('apartment', 'services'));
+        return view('admin.apartments.my_apartments.edit', compact('apartment'));
     }
 
     /**
@@ -123,14 +120,15 @@ class MyApartmentController extends Controller
         // VALIDATE
         $data = $request->validate($this->rules);
         $data['user_id'] = Auth::id();
-        $apartment->services()->sync($data['services']);
+        // $apartment->services()->sync($data['services']);
         // condizione dell'immagine in cui:
         // se l'immagine che gli mandiamo inizia con 'http', allora fa l'update normale
         if (str_starts_with($data['img'], 'http')) {
             $apartment->img = $data['img'];
         } else { //invece se l'immagine è un file, allora usiamo storage
-            $imageSrc = Storage::put('uploads/apartments', $data['img']);
-            $data['img'] = $imageSrc;
+            $imageSrc = Storage::put('uploads/Apartments', $data['img']);             
+            $imageUrl = Storage::url($imageSrc);             
+            $data['img'] = $imageUrl;
         }
         
         //CHIAMATA API TOMTOM PER OTTENERE LATITUDINE E LONGITUDINE
