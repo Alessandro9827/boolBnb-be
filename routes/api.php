@@ -24,5 +24,5 @@ Route::name('api.')->group(function () {
     Route::get('/guest/apartments', [ApartmentController::class, 'index'])->name('guest.apartments.index');
     Route::get('/guest/apartments/search', [ApartmentController::class, 'search'])->name('guest.apartments.search');
     Route::get('/guest/apartments/{apartment}', [ApartmentController::class, 'show'])->name('guest.apartments.show');
-    Route::post('/contact-us',[ LeadController::class, 'store' ])->name('leads.store');
+    Route::post('/contact-us/{apartment}',[ LeadController::class, 'store' ])->name('leads.store');
 });

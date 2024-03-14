@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Mail\NewContact;
+use App\Models\Apartment;
 use App\Models\Lead;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -11,8 +12,10 @@ use Illuminate\Support\Facades\Validator;
 
 class LeadController extends Controller
 {
-    public function store(Request $request){
+    public function store(Request $request, Apartment $apartment){
+        
         $data = $request->all();
+        $data['apartment_id'] = $apartment->id;
 
         $validator = Validator::make($data, [
             'name' => 'required',
@@ -29,7 +32,9 @@ class LeadController extends Controller
         }
 
         $newLead = new Lead();
+        $newLead->apartment_id = $data['apartment_id'];
         $newLead = $newLead->create($data);
+        
         // dd(new NewContact($newLead));
 
         // # Invio la mail

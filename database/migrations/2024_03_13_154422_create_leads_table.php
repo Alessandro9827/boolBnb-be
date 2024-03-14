@@ -13,11 +13,14 @@ return new class extends Migration
     {
         Schema::create('leads', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('apartment_id')->nullable();
             $table->string('name');
             $table->string('email');
             $table->text('message');
             $table->dateTime('date');
             $table->timestamps();
+
+            $table->foreign('apartment_id')->references('id')->on('apartments');
         });
     }
 
