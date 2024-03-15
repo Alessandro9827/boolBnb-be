@@ -7,6 +7,7 @@
             <h1>
                 My apartment
             </h1>
+            
             @foreach ($apartments as $apartment)
             
                 <div class="col-3">

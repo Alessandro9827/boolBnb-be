@@ -44,17 +44,21 @@
                         <p>
                             Square meters {{ $apartment->square_meters}}mq, and is located in {{ $apartment->address}}.
                         </p>
-                        @foreach ($apartment->leads as $message)                             
+                        {{-- @foreach ($apartment->leads as $message)                             
                             <li>                                 
                                 <p class="m-0">messaggio da:{{ $message->name }}</p>                                 
                                 <p>{{ $message->message }}</p>                             
                             </li>                         
-                        @endforeach
+                        @endforeach --}}
                         <p>
                             {{-- messaggio: {{isset($apartment->lead->message) ? $apartment->lead->message : 'Non ci sono messaggi!' }} --}}
                             {{-- Messaggio: {{ $leadCorrect->message }} --}}
                            
                         </p>
+                        
+                        <a href="{{ route('admin.my_apartments.messages', $apartment) }}" class="btn btn-primary">
+                            Messages!
+                        </a>
                     </div>
                     <a href="{{ route('admin.my_apartments.edit', $apartment) }}" class="text-decoration-none">
                         <button class="btn btn-sm btn-success">
