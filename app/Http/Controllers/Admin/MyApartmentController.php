@@ -14,23 +14,36 @@ use Illuminate\Support\Facades\Storage;
 
 class MyApartmentController extends Controller
 {
-    private $rules = [
-        'title' => ['required', 'min:5', 'max:255', 'string'],
-        'user_id' => ['exists:users,id'],
-        
-        'no_rooms' => ['required', 'min:1', 'max:100', 'integer'],
-        'no_beds' => ['required', 'min:1', 'max:100', 'integer'],
-        'no_bathrooms' => ['required', 'min:1', 'max:10', 'integer'],
-        'square_meters' => ['nullable', 'min:10', 'max:10000', 'integer'],
-        'address' => ['required', 'min:5', 'max:255', 'string'],
-        'img' => 'required', 'image|url:https',
-        'visible' => ['boolean'],
-        'latidute' => ['min:4', 'max:6', 'float'],
-        'longitude' => ['min:4', 'max:6', 'float'],
-        'price' => ['required', 'min:10', 'max:100000', 'numeric'],
-        'description' => ['nullable', 'min:10', 'string'],
-        'services' => ['exists:services,id'],
-    ];
+    private $rules;
+
+    public function __construct()
+    {
+        $this->rules = [
+            'title' => ['required', 'min:5', 'max:255', 'string'],
+            'user_id' => ['exists:users,id'],
+            'no_rooms' => ['required', 'min:1', 'max:100', 'integer'],
+            'no_beds' => ['required', 'min:1', 'max:100', 'integer'],
+            'no_bathrooms' => ['required', 'min:1', 'max:10', 'integer'],
+            'square_meters' => ['nullable', 'min:10', 'max:10000', 'integer'],
+            'address' => [
+                'required', 'min:5', 'max:255', 'string',
+                function ($attribute, $value, $fail) {
+                    // Verifica se 'latitude' e 'longitude' sono presenti
+                    if (!request()->has('latitude') || !request()->has('longitude')) {
+                        $fail('The address entered is incorrect');
+                    }
+                },
+            ],
+            'img' => 'required', 'image', 'url',
+            'visible' => ['boolean'],
+            'latitude' => ['min:4', 'max:6', 'numeric'],
+            'longitude' => [ 'min:4', 'max:6', 'numeric'],
+            'price' => ['required', 'min:10', 'max:100000', 'numeric'],
+            'description' => ['nullable', 'min:10', 'string'],
+            'services' => ['exists:services,id'],
+        ];
+    }
+    
 
     public function index()
     {
@@ -76,15 +89,20 @@ class MyApartmentController extends Controller
 
         $json = file_get_contents($coordinate);
         $obj = json_decode($json);
-        $lat = $obj->results[0]->position->lat;
-        $lon = $obj->results[0]->position->lon;
-        
-        $data['latitude'] = $lat;
-        $data['longitude'] = $lon;
-
-        $apartment = Apartment::create($data);
-        // $apartment->services()->sync($data['services']);
-        return redirect()->route('admin.my_apartments.show', $apartment);
+        // dd($obj);
+        if (count($obj->results) === 1) {
+            $lat = $obj->results[0]->position->lat;
+            $lon = $obj->results[0]->position->lon;
+            $data['latitude'] = $lat;
+            $data['longitude'] = $lon;
+            $apartment = Apartment::create($data);
+            // $apartment->services()->sync($data['services']);
+            return redirect()->route('admin.my_apartments.show', $apartment);
+        }else{
+            
+        }
+        // $errors = 'Non hai selezionato un\'indirizzo valido!!!'; 
+        // return redirect()->route('admin.my_apartments.create', $errors);
     }
 
     /**
