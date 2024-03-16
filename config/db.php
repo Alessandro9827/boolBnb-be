@@ -58,7 +58,7 @@ return [ 'apartments' => [
        ",
     ],
     [
-        
+        "user_id" => 3,
         "img" => "https://a0.muscache.com/im/pictures/cce3b40d-41c2-40bc-925b-2cf1fbc79932.jpg?im_w=960",
         "title" => "Villa indipendente con discesa privata al mare",
         "no_rooms" => 4,
@@ -78,6 +78,7 @@ return [ 'apartments' => [
 
     [
         
+        "user_id" => 2,
         "img" => "https://a0.muscache.com/im/pictures/575769db-5ee8-4bea-b79e-2b6e36b0c0bf.jpg?im_w=960",
         "title" => "Villa Mimosa - villa sul mare con piscina",
         "no_rooms" => 6,
@@ -101,6 +102,7 @@ return [ 'apartments' => [
     ],
     [
         
+        "user_id" => 4,
         "img" => "https://a0.muscache.com/im/pictures/90d7715f-5589-4795-985c-d1118884aeaa.jpg?im_w=960",
         "title" => "Cottage Storhogna",
         "no_rooms" => 4,
@@ -147,6 +149,7 @@ return [ 'apartments' => [
     ],
     [
         
+        "user_id" => 2,
         "img" => "https://a0.muscache.com/im/pictures/64b80b7d-cac0-4066-8ba7-5853c16943a4.jpg?im_w=960",
         "title" => "CASA SULL'ALBERO DI BALIAN con splendida piscina",
         "no_rooms" => 1,
@@ -167,6 +170,7 @@ return [ 'apartments' => [
     ],
     [
         
+        "user_id" => 3,
         "img" => "https://a0.muscache.com/im/pictures/hosting/Hosting-1070265013885213861/original/a0465672-e771-4bf7-842d-0b7f1b6d71cb.jpeg?im_w=960",
         "title" => "Casa Ana-luxe Villa , fronte oceano, servizio a 5 stelle",
         "no_rooms" => 2,
@@ -183,6 +187,7 @@ return [ 'apartments' => [
     ],
     [
         
+        "user_id" => 4,
         "img" => "https://a0.muscache.com/im/pictures/7d2300ef-eaed-4882-8ae5-d0912bae548e.jpg?im_w=720",
         "title" => "Dolce notte sotto le stelle",
         "no_rooms" => 1,
@@ -198,6 +203,7 @@ return [ 'apartments' => [
     ],
     [
         
+        "user_id" => 3,
         "img" => "https://a0.muscache.com/im/pictures/miso/Hosting-870018156972269427/original/4adf4013-03d6-4313-9486-c1ef193e13dc.jpeg?im_w=960",
         "title" => "Appartamento Zemljanka - Earth House",
         "no_rooms" => 1,
