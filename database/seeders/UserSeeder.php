@@ -21,6 +21,38 @@ class UserSeeder extends Seeder
             'email' => 'marcorossi@gmail.com',
             'password' => Hash::make('password'),
             'address' => 'Via Roma 57',
+
+            
+        ]);
+        User::create([
+            'name' => 'Fra',
+            'surname' => 'Blu',
+            'date_of_birth' => '1998-04-19',
+            'email' => 'a@gmail.com',
+            'password' => Hash::make('aaa'),
+            'address' => 'Via Mia 57',
+
+            
+        ]);
+        User::create([
+            'name' => 'Franco',
+            'surname' => 'Giallo',
+            'date_of_birth' => '1998-04-19',
+            'email' => 'aa@gmail.com',
+            'password' => Hash::make('aaa'),
+            'address' => 'Via Mia 57',
+
+            
+        ]);
+        User::create([
+            'name' => 'Paolo',
+            'surname' => 'Cannone',
+            'date_of_birth' => '1998-04-19',
+            'email' => 'aaa@gmail.com',
+            'password' => Hash::make('aaa'),
+            'address' => 'Via Mia 57',
+
+            
         ]);
     }
 }
