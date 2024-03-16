@@ -42,6 +42,7 @@ Route::middleware('auth')
         Route::get('/my_apartments/{apartment}', [MyApartmentController::class, 'show'])->name('my_apartments.show');
         Route::put('/my_apartments/{apartment}', [MyApartmentController::class, 'update'])->name('my_apartments.update');
         Route::get('/my_apartments/{apartment}/edit', [MyApartmentController::class, 'edit'])->name('my_apartments.edit');
+        Route::get('/my_apartments/{apartment}/messages', [MyApartmentController::class, 'messages'])->name('my_apartments.messages');
     });
 
     Auth::routes();

@@ -114,7 +114,7 @@ class MyApartmentController extends Controller
         
         
         
-        //  dd($leads);
+        
         return view('admin.apartments.my_apartments.show', compact('apartment'));
     }
 
@@ -207,4 +207,10 @@ class MyApartmentController extends Controller
     //     return redirect () ->route ('admin.apartment.deleted.index') ;    
 
     // }
+
+    public function messages(Apartment $apartment){
+        
+        return view('admin.apartments.my_apartments.messages.message', compact('apartment'));
+
+    }
 }
