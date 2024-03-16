@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('email');
             $table->text('message');
-            $table->dateTime('date');
+            $table->date('date');
             $table->timestamps();
 
             $table->foreign('apartment_id')->references('id')->on('apartments');
