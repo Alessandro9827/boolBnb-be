@@ -98,8 +98,6 @@ class MyApartmentController extends Controller
             $apartment = Apartment::create($data);
             // $apartment->services()->sync($data['services']);
             return redirect()->route('admin.my_apartments.show', $apartment);
-        }else{
-            
         }
         // $errors = 'Non hai selezionato un\'indirizzo valido!!!'; 
         // return redirect()->route('admin.my_apartments.create', $errors);
@@ -157,15 +155,15 @@ class MyApartmentController extends Controller
 
         $json = file_get_contents($coordinate);
         $obj = json_decode($json);
-        $lat = $obj->results[0]->position->lat;
-        $lon = $obj->results[0]->position->lon;
-        
-        $data['latitude'] = $lat;
-        $data['longitude'] = $lon;
-
-        $apartment->update($data);
-
-        return redirect()->route('admin.my_apartments.show', $apartment);
+        if (count($obj->results) === 1) {
+            $lat = $obj->results[0]->position->lat;
+            $lon = $obj->results[0]->position->lon;
+            $data['latitude'] = $lat;
+            $data['longitude'] = $lon;
+            $apartment = Apartment::create($data);
+            // $apartment->services()->sync($data['services']);
+            return redirect()->route('admin.my_apartments.show', $apartment);
+        }
     }
 
     /**
