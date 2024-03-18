@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\ApartmentController;
 use App\Http\Controllers\Api\LeadController;
+use App\Http\Controllers\ServiceController;
 use App\Models\Apartment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -26,3 +27,4 @@ Route::name('api.')->group(function () {
     Route::get('/guest/apartments/{apartment}', [ApartmentController::class, 'show'])->name('guest.apartments.show');
     Route::post('/contact-us/{apartment}',[ LeadController::class, 'store' ])->name('leads.store');
 });
+Route::apiResource('/services', ServiceController::class);
