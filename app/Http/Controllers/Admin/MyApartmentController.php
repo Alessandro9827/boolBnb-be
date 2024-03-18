@@ -73,11 +73,6 @@ class MyApartmentController extends Controller
         $data = $request->validate($this->rules);
         $data['user_id'] = Auth::id();
         $apartment = new Apartment();
-        
-
-        
-        
-        
 
         // $imageSrc = Storage::put('uploads/apartments', $data['img']);
         // $data['img'] = $imageSrc;
@@ -102,6 +97,8 @@ class MyApartmentController extends Controller
             $apartment = Apartment::create($data);
             $apartment->services()->sync($data['services']);
             return redirect()->route('admin.my_apartments.show', $apartment);
+        } else {
+            return redirect()->back()->withErrors(['address' => 'L\'indirizzo inserito non è valido']);
         }
         // $errors = 'Non hai selezionato un\'indirizzo valido!!!'; 
         // return redirect()->route('admin.my_apartments.create', $errors);
@@ -137,9 +134,9 @@ class MyApartmentController extends Controller
      */
     public function update(Request $request, Apartment $apartment )
     {
-        $data = $request->validate($this->rules);
+        $data = $request->all();
         
-        $apartment->services()->sync($data['services']);
+        // $apartment->services()->sync($data['services']);
 
         // VALIDATE
         $data = $request->validate($this->rules);
@@ -169,9 +166,12 @@ class MyApartmentController extends Controller
             $data['latitude'] = $lat;
             $data['longitude'] = $lon;
             $apartment->update($data);
-            // $apartment->services()->sync($data['services']);
+            $apartment->services()->sync($data['services']);
             return redirect()->route('admin.my_apartments.show', $apartment);
+        } else {
+            return redirect()->back()->withErrors(['address' => 'L\'indirizzo inserito non è valido']);
         }
+        // $request->validate($this->rules);
     }
 
     /**
