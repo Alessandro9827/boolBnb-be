@@ -27,12 +27,12 @@ class MyApartmentController extends Controller
             'square_meters' => ['nullable', 'min:10', 'max:10000', 'integer'],
             'address' => [
                 'required', 'min:5', 'max:255', 'string',
-                function ($attribute, $value, $fail) {
-                    // Verifica se 'latitude' e 'longitude' sono presenti
-                    if (!request()->has('latitude') || !request()->has('longitude')) {
-                        $fail('The address entered is incorrect');
-                    }
-                },
+                // function ($attribute, $value, $fail) {
+                //     // Verifica se 'latitude' e 'longitude' sono presenti
+                //     if (!request()->has('latitude') || !request()->has('longitude')) {
+                //         $fail('The address entered is incorrect');
+                //     }
+                // },
             ],
             'img' => 'required', 'image', 'url',
             'visible' => ['boolean'],
@@ -72,6 +72,10 @@ class MyApartmentController extends Controller
         // dd($request->all());
         $data = $request->validate($this->rules);
         $data['user_id'] = Auth::id();
+        $apartment = new Apartment();
+        
+
+        
         
         
 
@@ -96,7 +100,7 @@ class MyApartmentController extends Controller
             $data['latitude'] = $lat;
             $data['longitude'] = $lon;
             $apartment = Apartment::create($data);
-            // $apartment->services()->sync($data['services']);
+            $apartment->services()->sync($data['services']);
             return redirect()->route('admin.my_apartments.show', $apartment);
         }
         // $errors = 'Non hai selezionato un\'indirizzo valido!!!'; 
@@ -109,13 +113,13 @@ class MyApartmentController extends Controller
     public function show(Apartment $apartment)
     {
         
-        $service = Service::all();
+        $services = Service::all();
     
         
         
         
         
-        return view('admin.apartments.my_apartments.show', compact('apartment'));
+        return view('admin.apartments.my_apartments.show', compact('apartment', 'services'));
     }
 
     /**
@@ -123,9 +127,9 @@ class MyApartmentController extends Controller
      */
     public function edit(Apartment $apartment){
 
-        $service = Service::all();
+        $services = Service::all();
       
-        return view('admin.apartments.my_apartments.edit', compact('apartment'));
+        return view('admin.apartments.my_apartments.edit', compact('apartment', 'services'));
     }
 
     /**
@@ -133,6 +137,10 @@ class MyApartmentController extends Controller
      */
     public function update(Request $request, Apartment $apartment )
     {
+        $data = $request->validate($this->rules);
+        
+        $apartment->services()->sync($data['services']);
+
         // VALIDATE
         $data = $request->validate($this->rules);
         $data['user_id'] = Auth::id();
@@ -160,7 +168,7 @@ class MyApartmentController extends Controller
             $lon = $obj->results[0]->position->lon;
             $data['latitude'] = $lat;
             $data['longitude'] = $lon;
-            $apartment = Apartment::create($data);
+            $apartment->update($data);
             // $apartment->services()->sync($data['services']);
             return redirect()->route('admin.my_apartments.show', $apartment);
         }

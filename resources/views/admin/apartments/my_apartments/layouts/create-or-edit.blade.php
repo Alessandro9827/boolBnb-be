@@ -77,8 +77,18 @@
                     <label for="price">Price *</label>
                     <input type="number" class="form-control d-inline w-50" id="price" name="price" value="{{old('price', $apartment->price)}}" step="0.01">
                 </div>
+                <div class="mb-3 input-group">
+                    <div>
+                        @foreach ($services as $service )
+                            <input class="form-check-input" type="checkbox" name="services[]" id="services {{ $service->id }}" value="{{ $service->id }}"
+                            {{ in_Array( $service->id, old('service', $apartment->services->pluck('id')->toArray())) ? 'checked' : '' }}>
+                            <label for="services {{ $service->id }}">{{ $service->name }}</label>
+                            
+                        @endforeach
+                    </div>
+                </div>
                 <button type="submit" class="btn btn-primary">@yield('page-title')</button>
-              </form>
+            </form>
         </div>
     </div>
 </div>

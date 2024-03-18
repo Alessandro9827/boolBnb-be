@@ -44,6 +44,17 @@
                         <p>
                             Square meters {{ $apartment->square_meters}}mq, and is located in {{ $apartment->address}}.
                         </p>
+                        <p>
+                            Services: @foreach ( $apartment->services as $service )
+
+                            <ul>
+                                <li>
+                                    {{ $service->name }}
+                                </li>
+                            </ul>
+                                
+                            @endforeach
+                        </p>
                         {{-- @foreach ($apartment->leads as $message)                             
                             <li>                                 
                                 <p class="m-0">messaggio da:{{ $message->name }}</p>                                 
