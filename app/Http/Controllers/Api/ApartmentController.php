@@ -32,6 +32,23 @@ class ApartmentController extends Controller
         if($request->has('beds') && $request['beds'] != 0) {
             $query->where('no_beds', '>=', $request['beds']);
         }
+
+        if($request->has('rooms') && $request['rooms'] != 0) {
+            $query->where('no_rooms', '>=', $request['rooms']);
+        }
+
+        if($request->has('bathrooms') && $request['bathrooms'] != 0) {
+            $query->where('no_bathrooms', '>=', $request['bathrooms']);
+        }
+
+        if($request->has('services') && $request['services'] != []) {
+            $services = $request['services'];
+            $query->whereHas('services', function ($q) use ($services) {
+                $q->whereIn('service_id', $services);
+            }, '=', count($services));
+        }
+
+
         if($request->has('address') && $request['address'] != "") {
             $apiKey = env('TOMTOM_API_KEY');
             $addressQuery = str_replace(' ', '+', $request['address']);
