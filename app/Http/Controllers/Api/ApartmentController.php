@@ -29,6 +29,9 @@ class ApartmentController extends Controller
     public function search(Request $request){
         $query = Apartment::query();
 
+        if($request->has('beds') && $request['beds'] != 0) {
+            $query->where('no_beds', '>=', $request['beds']);
+        }
         if($request->has('address') && $request['address'] != "") {
             $apiKey = env('TOMTOM_API_KEY');
             $addressQuery = str_replace(' ', '+', $request['address']);
