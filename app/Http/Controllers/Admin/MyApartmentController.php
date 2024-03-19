@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Apartment;
 use App\Models\Lead;
 use App\Models\Service;
+use App\Models\Sponsor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -111,12 +112,8 @@ class MyApartmentController extends Controller
     {
         
         $services = Service::all();
-    
-        
-        
-        
-        
-        return view('admin.apartments.my_apartments.show', compact('apartment', 'services'));
+        $sponsors = Sponsor::all();
+        return view('admin.apartments.my_apartments.show', compact('apartment', 'services', 'sponsors'));
     }
 
     /**
@@ -206,6 +203,17 @@ class MyApartmentController extends Controller
         return redirect()->route('admin.apartments.my_apartments.show', $apartment);
     }
 
+    public function syncSponsor(Apartment $apartment,  Request $request) {
+        // dump($request->all());
+        
+        $data = $request->all();
+        $apartment->sponsors()->sync($data['sponsors']);
+        
+        $services = Service::all();
+        $sponsors = Sponsor::all();
+
+        return view('admin.apartments.my_apartments.show', compact('apartment', 'sponsors', 'services') );
+    }
     // public function deletedDestroy(string $id){
 
     //     $apartment = Apartment::withTrashed()->where('id', $id)->first();

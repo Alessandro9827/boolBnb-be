@@ -10,13 +10,13 @@
                         {{$apartment->title}}
                     </h1>
                     @if (str_starts_with($apartment->img, 'http'))
-                    <img src="{{$apartment->img}}" alt="" >
-                    
-                        
+
+                        <img src="{{$apartment->img}}" alt="" >
+
                     @else
-                        
+
                         <img src="{{ asset ('storage') . '/' . $apartment->img}}" alt="">
-                 
+
                     @endif 
                     <div>
                         <p>
@@ -66,9 +66,12 @@
                             {{-- Messaggio: {{ $leadCorrect->message }} --}}
                            
                         </p>
-                        
+                        @if (count($apartment->sponsors) !== 0)
+                            <h1>Sponsored</h1>
+                        @endif
+
                         <a href="{{ route('admin.my_apartments.messages', $apartment) }}" class="btn btn-primary">
-                            Messages!
+                            Messages
                         </a>
                     </div>
                     <a href="{{ route('admin.my_apartments.edit', $apartment) }}" class="text-decoration-none">
@@ -81,9 +84,42 @@
                         @method('DELETE')
 
                         <button class="btn btn-sm btn-warning" >
-                            elimina
+                            Delete
                         </button>
                     </form>
+                    {{-- @dump(count($apartment->sponsors)) --}}
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Launch demo modal
+                    </button>
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form action="{{route('admin.sponsor', $apartment)}}" method="GET">
+                                    <div class="modal-body">
+                                        {{-- @dump($apartment) --}}
+                                        <h5>Sponsors</h5>
+                                        <select name="sponsors" id="sponsors">
+                                            @foreach ($sponsors as $sponsor)
+                                                <option value="{{$sponsor->id}}"> {{$sponsor->name}} </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    @include('admin.apartments.my_apartments.sponsor')
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

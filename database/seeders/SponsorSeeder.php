@@ -14,15 +14,29 @@ class SponsorSeeder extends Seeder
     public function run(): void
     {
         $sponsors = [
-            'basic' => '2.99',
-            'medium' => '5.99',
-            'premium' => '9.99',
+            [
+                'name' =>'Basic',
+                'price'=> 2.99,
+                'no_hours'=> 24
+            ],
+            [
+                'name' =>'Plus',
+                'price'=> 5.99,
+                'no_hours'=> 72
+            ],
+            [
+                'name' =>'Premium',
+                'price'=> 14.99,
+                'no_hours'=> 144
+            ]
         ];
 
-        foreach ($sponsors as $sponsorsName) {
+        foreach ($sponsors as $sponsor) {
             $newSponsor = new Sponsor();
 
-            $newSponsor->name = $sponsorsName;
+            $newSponsor->name = $sponsor['name'];
+            $newSponsor->price = $sponsor['price'];
+            $newSponsor->no_hours = $sponsor['no_hours'];
             $newSponsor->save();
         }
     }
