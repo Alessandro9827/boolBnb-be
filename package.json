@@ -14,7 +14,6 @@
         "vite": "^5.0.0"
     },
     "dependencies": {
-        "braintree": "^3.22.0",
         "vue-router": "^4.3.0"
     }
 }
