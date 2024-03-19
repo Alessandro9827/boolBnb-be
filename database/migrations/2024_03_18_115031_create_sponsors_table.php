@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('sponsors', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->decimal('price')->nullable()->default(0);
-            $table->time('no_hours');
+            $table->decimal('price', 6, 2)->unsigned();
+            $table->smallInteger('no_hours')->unsigned();
             $table->timestamps();
         });
     }

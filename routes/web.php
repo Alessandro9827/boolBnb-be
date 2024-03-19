@@ -5,7 +5,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ApartmentController as AdminApartmentController;
 use App\Http\Controllers\Admin\MyApartmentController as MyApartmentController;
+
 use App\Http\Controllers\Guest\ApartmentController as GuestApartmentController;
+
 
 
 /*
@@ -24,12 +26,13 @@ Route::get('/', function () {
 });
 
 
-    
+
 Auth::routes();
 Route::middleware('auth')
-    ->name('admin.')
-    ->prefix('admin/')
-    ->group(function () {
+->name('admin.')
+->prefix('admin/')
+->group(function () {
+        Route::get('/sponsor/{apartment}', [MyApartmentController::class, 'syncSponsor'])->name('sponsor');
         Route::get('/my_apartments/deleted', [MyApartmentController::class, 'deletedAparments'])->name('apartments.deleted');
         Route::get('/my_apartments/deleted/{apartment}', [MyApartmentController::class, 'deletedShow'])->name('apartments.deleted.show');
         Route::patch('/my_apartments/deleted/{apartment}', [MyApartmentController::class, 'deletedRestore'])->name('apartments.deleted.restore');
@@ -44,10 +47,8 @@ Route::middleware('auth')
         Route::get('/my_apartments/{apartment}/edit', [MyApartmentController::class, 'edit'])->name('my_apartments.edit');
         Route::get('/my_apartments/{apartment}/messages', [MyApartmentController::class, 'messages'])->name('my_apartments.messages');
     });
-Route::get('/sponsor', function () {
-    return view('admin.apartments.my_apartments.sponsor');
-});
-    Auth::routes();
+
+Auth::routes();
 
 Route::name('guest.')
     ->prefix('guest/')
