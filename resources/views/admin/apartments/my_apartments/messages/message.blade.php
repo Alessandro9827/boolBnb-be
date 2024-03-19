@@ -43,6 +43,9 @@
                                 {{ $message->name }}
                             </td>
                             <td>
+                                {{ $message->surname }}
+                            </td>
+                            <td>
                                 {{ $message->email }}
                             </td>
                             <td>
