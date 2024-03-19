@@ -44,7 +44,9 @@ Route::middleware('auth')
         Route::get('/my_apartments/{apartment}/edit', [MyApartmentController::class, 'edit'])->name('my_apartments.edit');
         Route::get('/my_apartments/{apartment}/messages', [MyApartmentController::class, 'messages'])->name('my_apartments.messages');
     });
-
+Route::get('/sponsor', function () {
+    return view('admin.apartments.my_apartments.sponsor');
+});
     Auth::routes();
 
 Route::name('guest.')
