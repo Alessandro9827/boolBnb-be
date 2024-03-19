@@ -212,7 +212,7 @@ class MyApartmentController extends Controller
         $services = Service::all();
         $sponsors = Sponsor::all();
 
-        return view('admin.apartments.my_apartments.show', compact('apartment', 'sponsors', 'services') );
+        return redirect()->route('admin.my_apartments.show', $apartment);
     }
     // public function deletedDestroy(string $id){
 
