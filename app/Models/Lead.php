@@ -10,7 +10,7 @@ class Lead extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'email', 'message', 'date', 'apartment_id',
+        'name','surname', 'email', 'message', 'date', 'apartment_id',
     ];
 
     public function apartament() {

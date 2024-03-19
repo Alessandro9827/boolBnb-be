@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('apartment_id')->nullable();
             $table->string('name');
+            $table->string('surname');
             $table->string('email');
             $table->text('message');
             $table->date('date');
