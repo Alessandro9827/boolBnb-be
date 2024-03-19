@@ -1,5 +1,7 @@
 <?php
 
+use function Ramsey\Uuid\v1;
+
 return [ 'apartments' => [
 
     [
@@ -224,7 +226,196 @@ return [ 'apartments' => [
         Nelle aree circostanti potrai trovare anche varie attività acquatiche, poiché l'appartamento Zemljanka si trova vicino alle Therme Sveti na Muri (Croazia), Terme Banovci, Terme Lendava e Bioterme Mala Nedelja.
         
         In questo modo potrai ricaricare le batterie e ottenere una nuova élan per svolgere le tue attività quotidiane!",
-    ]
+    ],
+    [
+        
+        "user_id" => 3,
+        "img" => "https://a0.muscache.com/im/pictures/40706270/81c0585d_original.jpg?im_w=1200",
+        "title" => "VILLA TORNO-Lake Como vista E piscina",
+        "no_rooms" => 4,
+        "no_beds" => 5,
+        "no_bathrooms" => 5,
+        "square_meters" => 520,
+        "address" => 'Roma, Via dei Fori Imperiali,',
+        "visible" => true,
+        "latitude" => 45.4641 ,
+        "longitude" => 9.1915,
+        "price" => 422,
+        "description" => "La prima sensazione che si prova arrivando a Villa Torno  è la forte energia che emana da un luogo selvaggio e incontaminato. Paesaggio e Natura fanno il resto: la cavità rocciosa nel seminterrato e le viste mozzafiato verso il lago.
+        Preparati a goderti e rilassarti nella nostra piscina unica tra le rocce della cava."
+        
+    ],
+    [
+        
+        "user_id" => 4,
+        "img" => "https://a0.muscache.com/im/pictures/b42b9cc1-8ba8-4533-831c-7d9a4ad97070.jpg?im_w=1200",
+        "title" => "Meravigliosa villa ecosostenibile destinazione sul lago",
+        "no_rooms" => 4,
+        "no_beds" => 4,
+        "no_bathrooms" => 3,
+        "square_meters" => 420,
+        "address" => 'Napoli, Via Toledo',
+        "visible" => true,
+        "latitude" => 40.8394,
+        "longitude" => 14.2501,
+        "price" => 422,
+        "description" => "La Villa si sviluppa su 2 piani: al primo piano gli ospiti trovano una cucina completamente attrezzata con elettrodomestici moderni, un ampio ed elegante soggiorno arredato e le 3 camere da letto.
+        La camera da letto principale ha un comodo letto matrimoniale standard, bagno privato con doccia/sauna e una splendida vista sul lago attraverso la finestra dal pavimento al soffitto.
+        Due letti a castello, che scompaiono nei grandi armadi, si trovano nella seconda camera da letto vicino a un bagno dedicato con doccia proprio di fronte.
+        La terza camera ha un letto king-size, che può essere diviso in due letti singoli su richiesta, con un bagno dedicato e con doccia."
+        
+    ],
+    [
+        
+        "user_id" => 2,
+        "img" => "https://a0.muscache.com/im/pictures/miso/Hosting-22722692/original/0f98b977-5ac7-49e2-8fe8-c08bab195057.jpeg?im_w=1200",
+        "title" => "VILLA CARLA - codici CIR 012124-CNI-00002",
+        "no_rooms" => 4,
+        "no_beds" => 6,
+        "no_bathrooms" => 2,
+        "square_meters" => 220,
+        "address" => 'Catania, Corso Umberto I',
+        "visible" => true,
+        "latitude" => 37.5042,
+        "longitude" => 15.0875,
+        "price" => 422,
+        "description" => "Villa padronale immersa in un ampio parco, ubicata nelle vicinanze dei Laghi Varesini.
+        Cucina completamente arredata ,ampio soggiorno,
+        3 camere : Quadrifamiliare, Matrimoniale, Singola a 2 letti
+        2 bagni privati con vasca/doccia.
+        Durante il soggiorno è possibile raccogliere e consumare i prodotti dell'orto e del frutteto di casa."
+        
+    ],
+    [
+        
+        "user_id" => 3,
+        "img" => "https://a0.muscache.com/im/pictures/miso/Hosting-751956197261688961/original/65187a39-f958-40d4-95ac-03e316e0cc90.jpeg?im_w=1200",
+        "title" => "Ootoolna in volo",
+        "no_rooms" => 2,
+        "no_beds" => 2,
+        "no_bathrooms" => 2,
+        "square_meters" => 220,
+        "address" => 'Firenze, Corso Italia',
+        "visible" => true,
+        "latitude" => 43.7689,
+        "longitude" =>  11.2515,
+        "price" => 422,
+        "description" => "Immagina di riposare sotto un soffice piumone sulle cime degli alberi. Intorno a te solo il bosco, le stelle e il silenzio. Bevi tè caldo e assapori ogni sorso. Vi state concentrando gli uni sugli altri. Forse, dopo così tanto tempo, senza il rumore assordante della città e della società, ti sentirai di nuovo. Trovati in un'oasi di pace. Te lo meriti."
+        
+    ],
+    [
+        
+        "user_id" => 3,
+        "img" => "https://a0.muscache.com/im/pictures/miso/Hosting-50774192/original/d875db07-8780-4877-9548-5d4471a0db49.jpeg?im_w=1200",
+        "title" => "Letto dormitorio per 4 persone con balcone",
+        "no_rooms" => 2,
+        "no_beds" => 2,
+        "no_bathrooms" => 2,
+        "square_meters" => 220,
+        "address" => ' Genova, Corso Buenos Aires ',
+        "visible" => true,
+        "latitude" =>  44.4055,
+        "longitude" => 8.9331,
+        "price" => 422,
+        "description" => "La Paglia è una casa autonoma energicamente, costruita con materiali ecologici a Pelvoux, immersa nella natura, di fronte alle montagne.
+
+        Letti in dormitorio 4 persone, con balcone e accesso a due bagni condivisi. Avrete inoltre accesso a una cucina attrezzata a gestione libera. La prima colazione è inclusa e a base di prodotti freschi, biologici e locali."
+        
+    ],
+    [
+        
+        "user_id" => 3,
+        "img" => "https://a0.muscache.com/im/pictures/f7f706a4-48fd-46e8-8669-d30f8129fc17.jpg?im_w=1200",
+        "title" => "Casa Giulia (011024-LT-0186)",
+        "no_rooms" => 2,
+        "no_beds" => 2,
+        "no_bathrooms" => 2,
+        "square_meters" => 220,
+        "address" => 'Bologna, Corso Garibaldi',
+        "visible" => true,
+        "latitude" => 44.4949,
+        "longitude" => 11.3436,
+        "price" => 422,
+        "description" => "Un paradiso con vista mare situato proprio sul bordo del mare con ampia veranda privata a Riomaggiore.  Wifi gratuito
+
+        Lo spazio
+        Un appartamento con una camera da letto proprio sul mare con una splendida vista sul mare dalla sua veranda privata.  L'appartamento offre una camera da letto costruita "
+        
+    ],
+    [
+        
+        "user_id" => 3,
+        "img" => "https://a0.muscache.com/im/pictures/miso/Hosting-46695796/original/38bc8081-9415-453a-b8bf-9f4aeb146819.jpeg?im_w=1200",
+        "title" => "Le MICA - Vista panoramica vicino a Québec",
+        "no_rooms" => 2,
+        "no_beds" => 2,
+        "no_bathrooms" => 2,
+        "square_meters" => 220,
+        "address" => 'Torino, Via Roma ',
+        "visible" => true,
+        "latitude" => 45.0705,
+        "longitude" => 7.6868,
+        "price" => 422,
+        "description" => "Benvenuti alla MICA, microcasa di alta gamma arroccata in cima alla montagna. Immergiti in un'esperienza immersiva nella natura a soli 30 minuti dal Vieux-Québec.
+
+        Concedetevi una vista vertiginosa sulla valle e sulle montagne, così come tramonti mozzafiato dalla vetta più alta di Lac-Beauport. Esplora la topografia unica della montagna percorrendo i sentieri ricreativi accessibili in ogni stagione, scoprendo un "
+        
+    ],
+    [
+        
+        "user_id" => 3,
+        "img" => "https://a0.muscache.com/im/pictures/miso/Hosting-836928086735130523/original/4ba71b3c-49ee-43c0-b84e-4487978639dd.jpeg?im_w=1200",
+        "title" => "Lillvassen",
+        "no_rooms" => 2,
+        "no_beds" => 2,
+        "no_bathrooms" => 2,
+        "square_meters" => 220,
+        "address" => 'Palermo, Via Maqueda  ',
+        "visible" => true,
+        "latitude" => 38.1167,
+        "longitude" => 13.3633,
+        "price" => 422,
+        "description" => "Vivi il vero relax e divertimento sulla tua isola privata con il nostro cottage unico! Situato nel bel mezzo di un bellissimo lago, lontano dalla frenesia della città, il nostro cottage offre tutto il necessario per una vacanza indimenticabile.
+
+        Pesca nella tranquillità e nella serenità, fai un tuffo nell'acqua dolce o goditi una cena alla griglia sotto le stelle. Rilassati con un buon libro, pagaia, nuota, giochi o semplicemente "
+        
+    ],
+    [
+        
+        "user_id" => 3,
+        "img" => "https://a0.muscache.com/im/pictures/7cc3c855-f90e-4d0f-9b13-3b5c2a3c4bad.jpg?im_w=1200",
+        "title" => "CASA SULL'ALBERO DI BALIAN con splendida piscina",
+        "no_rooms" => 2,
+        "no_beds" => 2,
+        "no_bathrooms" => 2,
+        "square_meters" => 220,
+        "address" => 'Trieste, Corso Vittorio Veneto',
+        "visible" => true,
+        "latitude" => 45.6483,
+        "longitude" => 13.7768,
+        "price" => 422,
+        "description" => "La casa sull'albero Balian dista solo 3 minuti a piedi dalla spiaggia. Dalla veranda puoi guardare l'alba al mattino e goderti la vista del nostro bellissimo giardino (900m2) con piscina. (quando è al completo, vedi anche https://airbnb.com/rooms/4875630 si chiama The funky glasshouse)."
+        
+    ],
+    [
+        
+        "user_id" => 3,
+        "img" => "https://a0.muscache.com/im/pictures/miso/Hosting-1005033698355404462/original/74a194a8-1b76-41ce-ba2b-ae619dfc0130.jpeg?im_w=1200",
+        "title" => "Esclusiva villa di lusso privata",
+        "no_rooms" => 2,
+        "no_beds" => 2,
+        "no_bathrooms" => 2,
+        "square_meters" => 220,
+        "address" => 'Parma, Corso Cavour  ',
+        "visible" => true,
+        "latitude" => 44.8039,
+        "longitude" => 10.3307,
+        "price" => 422,
+        "description" => "Immersa in cima a una collina che si affaccia su una delle spiagge più incontaminate della costa settentrionale della Repubblica Dominicana, la villa di Tala non ha eguali. 
+        Questa villa di lusso con 6 camere da letto è dotata di tutto per una vacanza di lusso esclusiva di prim 'ordine.  
+        A Tala combiniamo la privacy e l'esclusività di una villa con i comfort e i servizi offerti nei migliori hotel del mondo."
+        
+    ],
 ]]
 
 
