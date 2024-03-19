@@ -14,50 +14,52 @@
         </h1>
         
         
-        @forelse ($apartment->leads as $message )
-            
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>
-                        Send to
-                    </th>
-                    <th>
-                        Email
-                    </th>
-                    <th>
-                       Messages
-                    </th>
-                    <th>
-                        Date
-                    </th>
-                    
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ( $apartment->leads as $message )  ?>
+        
+
+            <table class="table table-hover">
+                <thead>
                     <tr>
-                        <td>
-                            {{ $message->name }}
-                        </td>
-                        <td>
-                            {{ $message->email }}
-                        </td>
-                        <td>
-                            {{ $message->message }}
-                        </td>
-                        <td>
-                            {{ $message->date }}
-                        </td>
+                        <th>
+                            Send to
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                        <th>
+                        Messages
+                        </th>
+                        <th>
+                            Date
+                        </th>
                         
                     </tr>
-                
-            </tbody>
-        </table>
-        @empty
-            <p>
-                There are no messages....
-            </p>
+                </thead>
+                <tbody>
+                    @forelse ( $apartment->leads as $message )  
+                    
+               
+                        <tr>
+                            <td>
+                                {{ $message->name }}
+                            </td>
+                            <td>
+                                {{ $message->email }}
+                            </td>
+                            <td>
+                                {{ $message->message }}
+                            </td>
+                            <td>
+                                {{ $message->date }}
+                            </td>
+                            
+                        </tr>
+                    @empty
+                        <p>
+                            There are no messages....
+                        </p>
+                </tbody>
+            </table>
+        
         @endforelse
     </div>
 
