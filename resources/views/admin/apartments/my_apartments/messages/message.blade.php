@@ -20,13 +20,16 @@
                 <thead>
                     <tr>
                         <th>
-                            Send to
+                            Name
+                        </th>
+                        <th>
+                            Surname
                         </th>
                         <th>
                             Email
                         </th>
                         <th>
-                        Messages
+                            Messages
                         </th>
                         <th>
                             Date
