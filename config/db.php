@@ -236,10 +236,10 @@ return [ 'apartments' => [
         "no_beds" => 5,
         "no_bathrooms" => 5,
         "square_meters" => 520,
-        "address" => 'Roma, Via dei Fori Imperiali,',
+        "address" => 'Milano, via Alzaia Trento 6',
         "visible" => true,
-        "latitude" => 45.4641 ,
-        "longitude" => 9.1915,
+        "latitude" => 45.43746,
+        "longitude" => 9.11818,
         "price" => 422,
         "description" => "La prima sensazione che si prova arrivando a Villa Torno  è la forte energia che emana da un luogo selvaggio e incontaminato. Paesaggio e Natura fanno il resto: la cavità rocciosa nel seminterrato e le viste mozzafiato verso il lago.
         Preparati a goderti e rilassarti nella nostra piscina unica tra le rocce della cava."
@@ -249,15 +249,15 @@ return [ 'apartments' => [
         
         "user_id" => 4,
         "img" => "https://a0.muscache.com/im/pictures/b42b9cc1-8ba8-4533-831c-7d9a4ad97070.jpg?im_w=1200",
-        "title" => "Meravigliosa villa ecosostenibile destinazione sul lago",
+        "title" => "Meravigliosa villa ecosostenibile",
         "no_rooms" => 4,
         "no_beds" => 4,
         "no_bathrooms" => 3,
         "square_meters" => 420,
-        "address" => 'Napoli, Via Toledo',
+        "address" => 'Milano, Piazza Duomo 5',
         "visible" => true,
-        "latitude" => 40.8394,
-        "longitude" => 14.2501,
+        "latitude" => 45.4642,
+        "longitude" => 9.1884,
         "price" => 422,
         "description" => "La Villa si sviluppa su 2 piani: al primo piano gli ospiti trovano una cucina completamente attrezzata con elettrodomestici moderni, un ampio ed elegante soggiorno arredato e le 3 camere da letto.
         La camera da letto principale ha un comodo letto matrimoniale standard, bagno privato con doccia/sauna e una splendida vista sul lago attraverso la finestra dal pavimento al soffitto.
@@ -274,10 +274,10 @@ return [ 'apartments' => [
         "no_beds" => 6,
         "no_bathrooms" => 2,
         "square_meters" => 220,
-        "address" => 'Catania, Corso Umberto I',
+        "address" => 'Milano, via Bormio 164 ',
         "visible" => true,
-        "latitude" => 37.5042,
-        "longitude" => 15.0875,
+        "latitude" => 45.51620,
+        "longitude" => 9.26304,
         "price" => 422,
         "description" => "Villa padronale immersa in un ampio parco, ubicata nelle vicinanze dei Laghi Varesini.
         Cucina completamente arredata ,ampio soggiorno,
@@ -295,10 +295,10 @@ return [ 'apartments' => [
         "no_beds" => 2,
         "no_bathrooms" => 2,
         "square_meters" => 220,
-        "address" => 'Firenze, Corso Italia',
+        "address" => 'Cologno Monzese, via Andrea Doria 21',
         "visible" => true,
-        "latitude" => 43.7689,
-        "longitude" =>  11.2515,
+        "latitude" => 45.51753,
+        "longitude" =>  9.26318,
         "price" => 422,
         "description" => "Immagina di riposare sotto un soffice piumone sulle cime degli alberi. Intorno a te solo il bosco, le stelle e il silenzio. Bevi tè caldo e assapori ogni sorso. Vi state concentrando gli uni sugli altri. Forse, dopo così tanto tempo, senza il rumore assordante della città e della società, ti sentirai di nuovo. Trovati in un'oasi di pace. Te lo meriti."
         
@@ -312,10 +312,10 @@ return [ 'apartments' => [
         "no_beds" => 2,
         "no_bathrooms" => 2,
         "square_meters" => 220,
-        "address" => ' Genova, Corso Buenos Aires ',
+        "address" => 'Rozzano, via Valleambrosiana 5',
         "visible" => true,
-        "latitude" =>  44.4055,
-        "longitude" => 8.9331,
+        "latitude" =>  45.40273,
+        "longitude" => 9.15747,
         "price" => 422,
         "description" => "La Paglia è una casa autonoma energicamente, costruita con materiali ecologici a Pelvoux, immersa nella natura, di fronte alle montagne.
 
@@ -331,10 +331,10 @@ return [ 'apartments' => [
         "no_beds" => 2,
         "no_bathrooms" => 2,
         "square_meters" => 220,
-        "address" => 'Bologna, Corso Garibaldi',
+        "address" => 'Rho, via Ghisolfa 114',
         "visible" => true,
-        "latitude" => 44.4949,
-        "longitude" => 11.3436,
+        "latitude" => 45.50326,
+        "longitude" => 9.06205,
         "price" => 422,
         "description" => "Un paradiso con vista mare situato proprio sul bordo del mare con ampia veranda privata a Riomaggiore.  Wifi gratuito
 
@@ -351,10 +351,10 @@ return [ 'apartments' => [
         "no_beds" => 2,
         "no_bathrooms" => 2,
         "square_meters" => 220,
-        "address" => 'Torino, Via Roma ',
+        "address" => 'Rozzano, via Franchi Maggi 4',
         "visible" => true,
-        "latitude" => 45.0705,
-        "longitude" => 7.6868,
+        "latitude" => 45.39813,
+        "longitude" => 9.17336,
         "price" => 422,
         "description" => "Benvenuti alla MICA, microcasa di alta gamma arroccata in cima alla montagna. Immergiti in un'esperienza immersiva nella natura a soli 30 minuti dal Vieux-Québec.
 
@@ -370,10 +370,10 @@ return [ 'apartments' => [
         "no_beds" => 2,
         "no_bathrooms" => 2,
         "square_meters" => 220,
-        "address" => 'Palermo, Via Maqueda  ',
+        "address" => 'Pero, via Mario Greppi 11',
         "visible" => true,
-        "latitude" => 38.1167,
-        "longitude" => 13.3633,
+        "latitude" => 45.50904,
+        "longitude" => 9.08501,
         "price" => 422,
         "description" => "Vivi il vero relax e divertimento sulla tua isola privata con il nostro cottage unico! Situato nel bel mezzo di un bellissimo lago, lontano dalla frenesia della città, il nostro cottage offre tutto il necessario per una vacanza indimenticabile.
 
@@ -389,10 +389,10 @@ return [ 'apartments' => [
         "no_beds" => 2,
         "no_bathrooms" => 2,
         "square_meters" => 220,
-        "address" => 'Trieste, Corso Vittorio Veneto',
+        "address" => 'Milano, via Giulio Natta 20',
         "visible" => true,
-        "latitude" => 45.6483,
-        "longitude" => 13.7768,
+        "latitude" => 45.48831,
+        "longitude" => 9.11686,
         "price" => 422,
         "description" => "La casa sull'albero Balian dista solo 3 minuti a piedi dalla spiaggia. Dalla veranda puoi guardare l'alba al mattino e goderti la vista del nostro bellissimo giardino (900m2) con piscina. (quando è al completo, vedi anche https://airbnb.com/rooms/4875630 si chiama The funky glasshouse)."
         
@@ -406,10 +406,10 @@ return [ 'apartments' => [
         "no_beds" => 2,
         "no_bathrooms" => 2,
         "square_meters" => 220,
-        "address" => 'Parma, Corso Cavour  ',
+        "address" => 'Sesto San Giovanni, via Giosué Carducci 58',
         "visible" => true,
-        "latitude" => 44.8039,
-        "longitude" => 10.3307,
+        "latitude" => 45.53089,
+        "longitude" => 9.22378,
         "price" => 422,
         "description" => "Immersa in cima a una collina che si affaccia su una delle spiagge più incontaminate della costa settentrionale della Repubblica Dominicana, la villa di Tala non ha eguali. 
         Questa villa di lusso con 6 camere da letto è dotata di tutto per una vacanza di lusso esclusiva di prim 'ordine.  
@@ -417,6 +417,4 @@ return [ 'apartments' => [
         
     ],
 ]]
-
-
 ?>
