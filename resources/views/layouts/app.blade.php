@@ -22,13 +22,18 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
+                <div class="d-flex justify-content-between align-items-center ">
+                    <div>
+                        <img class="logo img-fluid" src="https://cdn.icon-icons.com/icons2/2699/PNG/512/airbnb_logo_icon_170605.png" alt="logo-bnb">
+                        
+                        <span class="bnb navbar-brand fw-semibold">
+                            boolbnb
+                        </span>
+                    </div>
+                </div>
                 <a class="navbar-brand" href="{{ url('/admin/my_apartments') }}">
                     My Apartments
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
@@ -41,9 +46,7 @@
                         @guest((Route::currentRouteName() == 'guest.recipes.index'))
                             
                         
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('guest.apartments.index') }}">Apartments</a>
-                            </li>
+                            
                             
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>

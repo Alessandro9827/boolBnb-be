@@ -4,9 +4,9 @@
 <div class="container">
     
     <div class="row">
-            <h1 class="mb-4">
+            <h2 class="mb-4">
                 My apartment
-            </h1>
+            </h2>
             
            
             
