@@ -6,7 +6,7 @@ return [ 'apartments' => [
 
     [
         "user_id" => 1,
-        "img" => "https://a0.muscache.com/im/pictures/miso/Hosting-1060808506263454126/original/1ebeda2a-7ea4-4357-96c1-ee57c1ee5586.jpeg?im_w=960",
+        "img" => "https://a0.muscache.com/im/pictures/miso/Hosting-846191369608841971/original/a3ddb53f-cd70-4c75-82a5-1039f951fbd9.jpeg?im_w=720",
         "title" => "Casa Frontemare con accesso al mare esclusivo",
         "no_rooms" => 2,
         "no_beds" => 3,
@@ -345,7 +345,7 @@ return [ 'apartments' => [
     [
         
         "user_id" => 3,
-        "img" => "https://a0.muscache.com/im/pictures/miso/Hosting-46695796/original/38bc8081-9415-453a-b8bf-9f4aeb146819.jpeg?im_w=1200",
+        "img" => "https://a0.muscache.com/im/pictures/miso/Hosting-45717978/original/4249ff56-83de-4dd5-af42-1973bf70d5db.png?im_w=720",
         "title" => "Le MICA - Vista panoramica vicino a Québec",
         "no_rooms" => 2,
         "no_beds" => 2,
