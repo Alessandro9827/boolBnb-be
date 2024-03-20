@@ -11,7 +11,7 @@ class ApartmentController extends Controller
 {
     public function index(){
         // ? EAGER LOADING con il nome del metodo presente all'interno del model
-        $apartments = Apartment::with('user')->get();
+        $apartments = Apartment::with('user', 'sponsors', 'services')->get();
         return response()->json(
             [
                 "success" => true,
@@ -64,7 +64,20 @@ class ApartmentController extends Controller
             $query->whereRaw('ST_Distance( POINT(apartments.longitude, apartments.latitude),POINT(' . $lon . ',' . $lat . ')) < ' . $request['range'] / 100);
         }
         
-        $apartments = $query->with('user')->get()->toArray();
+        $apartments = $query->with('user', 'services', 'sponsors')->get()->toArray();
+
+        $sponsoredApartment = [];
+        
+        foreach ($apartments as $index => $apartment) {
+            if ($apartment['sponsors'] != []) {
+                unset($apartments[$index]);
+                array_push($sponsoredApartment, $apartment);
+            }
+        }
+
+        foreach($sponsoredApartment as $sa) {
+            array_unshift($apartments, $sa);
+        }
         
         return response()->json([
             "success" => true,
