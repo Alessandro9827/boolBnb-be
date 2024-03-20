@@ -11,7 +11,19 @@ class ApartmentController extends Controller
 {
     public function index(){
         // ? EAGER LOADING con il nome del metodo presente all'interno del model
-        $apartments = Apartment::with('user', 'sponsors', 'services')->get();
+        $apartments = Apartment::with('user', 'sponsors', 'services')->get()->toArray();
+        $sponsoredApartment = [];
+        
+        foreach ($apartments as $index => $apartment) {
+            if ($apartment['sponsors'] != []) {
+                unset($apartments[$index]);
+                array_push($sponsoredApartment, $apartment);
+            }
+        }
+
+        foreach($sponsoredApartment as $sa) {
+            array_unshift($apartments, $sa);
+        }
         return response()->json(
             [
                 "success" => true,
