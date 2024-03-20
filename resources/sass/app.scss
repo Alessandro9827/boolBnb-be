@@ -20,6 +20,15 @@ ul#searchResults{
     }
 }
 
+button, 
+a#message-btn{
+    width: 100px;
+}
+
+.card {
+    border: none;
+}
+
 .button {
     cursor: pointer;
     font-weight: 500;
@@ -53,3 +62,4 @@ ul#searchResults{
     background-color: #8bdda8;
     color: white;
 }
+

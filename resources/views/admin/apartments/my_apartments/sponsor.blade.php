@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col 6">
             <div id="dropin-container"></div>
-            <button id="submit-button" class="button button--small button--green">Purchase</button>
+            <button type="button" id="submit-button" class="button button--small button--green">Purchase</button>
         </div>
     </div>
 </section>
