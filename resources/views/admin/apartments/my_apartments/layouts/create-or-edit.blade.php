@@ -58,15 +58,15 @@
                     <input type="radio" class="form-check-input" id="url" name="url" value="url">
                 </div> --}}
 
-                @if (str_starts_with($apartment->img, 'http'))
-                    <div class="form-group mb-3">
-                        <label for="img" class="form-label">Image *</label>
-                        <input type="text" class="form-control" id="img" name="img" value="{{old('img', $apartment->img)}}">
-                    </div>
+                @if (str_starts_with($apartment->img, 'http://127'))
+                <div class="form-group mb-3">
+                    <label for="img" class="form-label">Image *</label>
+                    <input type="file" class="form-control" id="img" name="img" value="{{old('img', $apartment->img)}}">
+                </div>
                 @else
                     <div class="form-group mb-3">
                         <label for="img" class="form-label">Image *</label>
-                        <input type="file" class="form-control" id="img" name="img" value="{{old('img', $apartment->img)}}">
+                        <input type="text" class="form-control" id="img" name="img" value="{{old('img', $apartment->img)}}">
                     </div>
                 @endif
                 {{-- <div class="form-group mb-3">
