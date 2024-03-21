@@ -38,7 +38,6 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-        
     }
     public function logout(Request $request)
     {
@@ -49,6 +48,6 @@ class LoginController extends Controller
         $request->session()->regenerateToken();
 
         // Personalizza l'URL a cui l'utente viene reindirizzato dopo il logout
-        return redirect('http://localhost:5174');
+        return redirect('http://localhost:5173');
     }
 }
